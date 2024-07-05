@@ -1,0 +1,110 @@
+[{
+  "_id": {
+    "$oid": "6683486fe173c762b688db78"
+  },
+  "id": "1",
+  "item_name": "Eggtoast",
+  "item_image_url": "https://images.unsplash.com/photo-1525351484163-7529414344d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+  "is_best_seller": true,
+  "item_price": 110,
+  "item_description": "Eggs provide a source of protein and fat, while toast is a source of complex carbohydrates. Together, this triple whammy offers good nutrient diversity, which is fundamental for a healthy breakfast that keeps you full for longer."
+},
+{
+  "_id": {
+    "$oid": "6683486fe173c762b688db79"
+  },
+  "id": "2",
+  "item_name": "Croissant",
+  "item_image_url": "https://images.unsplash.com/photo-1530610476181-d83430b64dcd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+  "is_best_seller": false,
+  "item_price": 150,
+  "item_description": "A croissant is a buttery, flaky, Austrian viennoiserie pastry inspired by the shape of the Austrian kipferl but using the French yeast-leavened laminated dough."
+},
+{
+  "_id": {
+    "$oid": "6683486fe173c762b688db7a"
+  },
+  "id": "3",
+  "item_name": "Salad",
+  "item_image_url": "https://images.unsplash.com/photo-1513442542250-854d436a73f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=947&q=80",
+  "is_best_seller": true,
+  "item_price": 230,
+  "item_description": "A salad is a dish consisting of mixed, mostly natural ingredients with at least one raw ingredient. They are typically served at room temperature or chilled, though some can be served warm. Condiments and salad dressings, which exist in a variety of flavors, are often used to enhance a salad."
+},
+{
+  "_id": {
+    "$oid": "6683486fe173c762b688db7b"
+  },
+  "id": "4",
+  "item_name": "Pancake",
+  "item_image_url": "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+  "is_best_seller": true,
+  "item_price": 180,
+  "item_description": "A pancake is a flat cake, often thin and round, prepared from a starch-based batter that may contain eggs, milk and butter and cooked on a hot surface such as a griddle or frying pan, often frying with oil or butter. It is a type of batter bread."
+},
+{
+  "_id": {
+    "$oid": "6683486fe173c762b688db7c"
+  },
+  "id": "5",
+  "item_name": "Sandwich",
+  "item_image_url": "https://images.unsplash.com/photo-1553909489-cd47e0907980?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1025&q=80",
+  "is_best_seller": false,
+  "item_price": 200,
+  "item_description": "A sandwich is a food typically consisting of vegetables, sliced cheese or meat, placed on or between slices of bread, or more generally any dish wherein bread serves as a container or wrapper for another food type. The sandwich began as a portable, convenient finger food in the Western world, though over time it has become prevalent worldwide."
+},
+{
+  "_id": {
+    "$oid": "668349b0e173c762b688db7e"
+  },
+  "id": "6",
+  "item_name": "Spaghetti Bolognese",
+  "item_image_url": "https://images.pexels.com/photos/6287527/pexels-photo-6287527.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "is_best_seller": true,
+  "item_price": 250,
+  "item_description": "Spaghetti Bolognese is a classic Italian dish made with ground meat, tomatoes, onions, and various spices served over spaghetti noodles."
+},
+{
+  "_id": {
+    "$oid": "668349b0e173c762b688db7f"
+  },
+  "id": "7",
+  "item_name": "Cheeseburger",
+  "item_image_url": "https://images.pexels.com/photos/3616956/pexels-photo-3616956.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "is_best_seller": true,
+  "item_price": 220,
+  "item_description": "A cheeseburger is a hamburger topped with cheese. The cheese is usually added to the cooking hamburger patty shortly before serving, which allows the cheese to melt."
+},
+{
+  "_id": {
+    "$oid": "668349b0e173c762b688db80"
+  },
+  "id": "8",
+  "item_name": "Tacos",
+  "item_image_url": "https://images.pexels.com/photos/2092507/pexels-photo-2092507.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "is_best_seller": false,
+  "item_price": 180,
+  "item_description": "Tacos is a traditional Mexican dish consisting of a small hand-sized corn or wheat tortilla topped with a filling."
+},
+{
+  "_id": {
+    "$oid": "668349b0e173c762b688db81"
+  },
+  "id": "9",
+  "item_name": "Pizza",
+  "item_image_url": "https://images.pexels.com/photos/1653877/pexels-photo-1653877.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "is_best_seller": true,
+  "item_price": 300,
+  "item_description": "Pizza is a savory dish of Italian origin consisting of a usually round, flattened base of leavened wheat-based dough topped with tomatoes, cheese, and often various other ingredients."
+},
+{
+  "_id": {
+    "$oid": "668349b0e173c762b688db82"
+  },
+  "id": "10",
+  "item_name": "Sushi",
+  "item_image_url": "]https://images.pexels.com/photos/248444/pexels-photo-248444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "is_best_seller": false,
+  "item_price": 400,
+  "item_description": "Sushi is a Japanese dish consisting of vinegared rice accompanied by various ingredients such as seafood, vegetables, and occasionally tropical fruits."
+}]
