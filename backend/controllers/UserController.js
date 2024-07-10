@@ -1,7 +1,7 @@
 import bcrypt from 'bcryptjs';
 import passport from 'passport';
 import models from '../models/models.js';
-const { UserModel } = models
+const {UserModel}  = models
 
 
 export const registerUser = async (req, res) => {
@@ -52,3 +52,4 @@ export const logoutUser = (req, res, next) => {
     res.status(200).json({ message: 'Logged out successfully' });
   });
 };
+

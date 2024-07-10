@@ -1,0 +1,1069 @@
+[
+    {
+        "restaurant_image_url": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "restaurant_name": "The Fusion Kitchen",
+        "delivery_time": 30,
+        "discount_offered": 50,
+        "is_veg": true,
+        "cuisines_available": [
+            "Italian",
+            "Indian"
+        ],
+        "restaurant_address": "Culinary Corner, 24, Mount Road, Navrangpura, Pune, 411001, India",
+        "restaurant_items": [
+            {
+                "item_name": "Pasta",
+                "item_image_url": "https://media.istockphoto.com/id/1215312647/photo/pasta-fettuccine-with-beef-ragout-sauce-in-black-bowl-grey-background-close-up-top-view.jpg?s=2048x2048&w=is&k=20&c=P6fGBwYeIM2rEVwgP0nepaxvF4jg8ogFLBcDJWiq30A=",
+                "is_best_seller": true,
+                "item_price": 180,
+                "item_description": "Pasta is a type of Italian food typically made from an unleavened dough of durum wheat flour mixed with water or eggs, and formed into sheets or other shapes, then cooked by boiling or baking.",
+                "cuisine": "Italian",
+                "is_veg": true,
+                "item_categories": [
+                    "Pasta",
+                    "Healthy"
+                ],
+                "cuisine_type": [
+                    "Italian"
+                ]
+            },
+            {
+                "item_name": "Spaghetti Bolognese",
+                "item_image_url": "https://images.pexels.com/photos/6287527/pexels-photo-6287527.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                "is_best_seller": true,
+                "item_price": 250,
+                "item_description": "Spaghetti Bolognese is a classic Italian dish made with ground meat, tomatoes, onions, and various spices served over spaghetti noodles.",
+                "item_categories": [
+                    "Pasta",
+                    "Healthy",
+                    "Street Food"
+                ],
+                "cuisine_type": [
+                    "Italian"
+                ]
+            },
+            {
+                "item_name": "Tiramisu",
+                "item_image_url": "https://media.istockphoto.com/id/1248489319/photo/tiramisu-cake-with-mint.jpg?s=2048x2048&w=is&k=20&c=Lx-lRBCgDJyk9YO5Ht7xjAdIzP7o2XvlPTrykV3xnuA=",
+                "is_best_seller": true,
+                "item_price": 180,
+                "item_description": "Tiramisu is a classic Italian dessert made with layers of coffee-soaked ladyfingers and mascarpone cheese, flavored with cocoa powder.",
+                "cuisine": "Italian",
+                "is_veg": true,
+                "item_categories": [
+                    "Dessert"
+                ],
+                "cuisine_type": [
+                    "Italian"
+                ]
+            },
+            {
+                "item_name": "Pav Bhaji",
+                "item_image_url": "https://media.istockphoto.com/id/1438867572/photo/pav-bhaji-is-a-fast-food-dish-from-india-consisting-of-a-thick-vegetable-curry-served-with.jpg?s=2048x2048&w=is&k=20&c=JXfwxdu6oqAG3Dh-IKtpCp-AiBYw75f5zofvm_QY978=",
+                "is_best_seller": true,
+                "item_price": 150,
+                "item_description": "Pav Bhaji is a popular street food in India consisting of a spicy mixture of mashed vegetables, served with lightly toasted bread rolls (pav).",
+                "cuisine": "Indian",
+                "is_veg": true,
+                "item_categories": [
+                    "Street Food",
+                    "Fast Food"
+                ],
+                "cuisine_type": [
+                    "Indian"
+                ]
+            },
+            {
+                "item_name": "Gulab Jamun",
+                "item_image_url": "https://media.istockphoto.com/id/668147754/photo/gulab-jamun.jpg?s=2048x2048&w=is&k=20&c=zc1gWIcMmqelyiypt1aWVLXC3lV4QqH11QXZkecQDe8=",
+                "is_best_seller": true,
+                "item_price": 120,
+                "item_description": "Gulab Jamun is a popular Indian dessert made with milk solids, fried and soaked in a sweet syrup flavored with cardamom and rose water.",
+                "cuisine": "Indian",
+                "is_veg": true,
+                "item_categories": [
+                    "Dessert"
+                ],
+                "cuisine_type": [
+                    "Indian"
+                ]
+            }
+        ]
+    },
+    {
+        "restaurant_image_url": "https://images.unsplash.com/photo-1475090169767-40ed8d18f67d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80",
+        "restaurant_name": "Global Flavors",
+        "delivery_time": 45,
+        "discount_offered": 10,
+        "is_veg": true,
+        "cuisines_available": [
+            "North Indian",
+            "Western",
+            "Japanese",
+            "International"
+        ],
+        "restaurant_address": "Gourmet Hub, 65, Outer Ring Road, T Nagar, Mumbai, 400001, India",
+        "restaurant_items": [
+            {
+                "item_name": "Chicken Biryani",
+                "item_image_url": "https://media.istockphoto.com/id/1345624336/photo/chicken-biriyani.jpg?s=2048x2048&w=is&k=20&c=uU0uuti6KOvpQhXuu6VMpgi021o1vZXfOhpMrJXSn1o=",
+                "is_best_seller": false,
+                "item_price": 350,
+                "item_description": "Chicken biryani is a mixed rice dish originating among the Muslims of the Indian subcontinent. It is made with Indian spices, rice, and usually, chicken.",
+                "cuisine_type": [
+                    "North Indian"
+                ],
+                "item_categories": [
+                    "Main Course"
+                ]
+            },
+            {
+                "item_name": "Paneer Tikka Masala",
+                "item_image_url": "https://media.istockphoto.com/id/1341648452/photo/paneer-tikka-high-resolution-stock-photo.jpg?s=2048x2048&w=is&k=20&c=K_37oRZFvl8x3xvGEQYGGFDjfr2m-c7dHu5GvFXaZ6k=",
+                "is_best_seller": false,
+                "item_price": 290,
+                "item_description": "Paneer tikka masala is a vegetarian dish from India consisting of marinated paneer cheese served in a spiced gravy. It is a popular dish in Indian cuisine and is known for its rich flavor.",
+                "cuisine_type": [
+                    "North Indian"
+                ],
+                "item_categories": [
+                    "Main Course"
+                ]
+            },
+            {
+                "item_name": "Butter Chicken",
+                "item_image_url": "https://media.istockphoto.com/id/1479262112/photo/butter-chicken.jpg?s=2048x2048&w=is&k=20&c=MF7fqkqcX_NMql0_zD4HFoo8A088HyeWiK2M1caQrVk=",
+                "is_best_seller": true,
+                "item_price": 320,
+                "item_description": "Butter chicken, also known as murgh makhani, is a dish of chicken in a spiced tomato, butter, and cream sauce. It is one of the most popular Indian curries worldwide.",
+                "cuisine_type": [
+                    "North Indian"
+                ],
+                "item_categories": [
+                    "Main Course"
+                ]
+            },
+            {
+                "item_name": "Cheesecake",
+                "item_image_url": "https://media.istockphoto.com/id/1225491381/photo/cheesecake-with-caramel-sauce.jpg?s=2048x2048&w=is&k=20&c=jBqK-gGJRwSrNc2rvRYMTd06K8uez--CCnffNMVwjm0=",
+                "is_best_seller": false,
+                "item_price": 200,
+                "item_description": "Cheesecake is a sweet dessert consisting of one or more layers. The main, and thickest layer, consists of a mixture of soft, fresh cheese, eggs, and sugar. ",
+                "cuisine": "Western",
+                "is_veg": true,
+                "item_categories": [
+                    "Dessert"
+                ],
+                "cuisine_type": [
+                    "Western"
+                ]
+            },
+            {
+                "item_name": "Sushi",
+                "item_image_url": "https://images.pexels.com/photos/248444/pexels-photo-248444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                "is_best_seller": false,
+                "item_price": 400,
+                "item_description": "Sushi is a Japanese dish consisting of vinegared rice accompanied by various ingredients such as seafood, vegetables, and occasionally tropical fruits.",
+                "item_categories": [
+                    "Healthy"
+                ],
+                "cuisine_type": [
+                    "Japanese"
+                ]
+            },
+            {
+                "item_name": "Pancake",
+                "item_image_url": "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+                "is_best_seller": true,
+                "item_price": 180,
+                "item_description": "A pancake is a flat cake, often thin and round, prepared from a starch-based batter that may contain eggs, milk and butter and cooked on a hot surface such as a griddle or frying pan, often frying with oil or butter. It is a type of batter bread.",
+                "item_categories": [
+                    "Breakfast",
+                    "Dessert"
+                ],
+                "cuisine_type": [
+                    "International"
+                ]
+            },
+            {
+                "item_name": "Croissant",
+                "item_image_url": "https://images.unsplash.com/photo-1530610476181-d83430b64dcd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+                "is_best_seller": false,
+                "item_price": 150,
+                "item_description": "A croissant is a buttery, flaky, Austrian viennoiserie pastry inspired by the shape of the Austrian kipferl but using the French yeast-leavened laminated dough.",
+                "item_categories": [
+                    "Breakfast",
+                    "Dessert"
+                ],
+                "cuisine_type": [
+                    "International"
+                ]
+            },
+            {
+                "item_name": "Eggtoast",
+                "item_image_url": "https://images.unsplash.com/photo-1525351484163-7529414344d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+                "is_best_seller": true,
+                "item_price": 110,
+                "item_description": "Eggs provide a source of protein and fat, while toast is a source of complex carbohydrates. Together, this triple whammy offers good nutrient diversity, which is fundamental for a healthy breakfast that keeps you full for longer.",
+                "item_categories": [
+                    "Breakfast",
+                    "Healthy"
+                ],
+                "cuisine_type": [
+                    "International"
+                ]
+            }
+        ]
+    },
+    {
+        "restaurant_image_url": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=999&q=80",
+        "restaurant_name": "Sushi & Spice",
+        "delivery_time": 60,
+        "discount_offered": 70,
+        "is_veg": false,
+        "cuisines_available": [
+            "International",
+            "South Indian",
+            "Indian"
+        ],
+        "restaurant_address": "Flavor Feast, 39, Outer Ring Road, Navrangpura, Mumbai, 380001, India",
+        "restaurant_items": [
+            {
+                "item_name": "Eggtoast",
+                "item_image_url": "https://images.unsplash.com/photo-1525351484163-7529414344d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+                "is_best_seller": true,
+                "item_price": 110,
+                "item_description": "Eggs provide a source of protein and fat, while toast is a source of complex carbohydrates. Together, this triple whammy offers good nutrient diversity, which is fundamental for a healthy breakfast that keeps you full for longer.",
+                "item_categories": [
+                    "Breakfast",
+                    "Healthy"
+                ],
+                "cuisine_type": [
+                    "International"
+                ]
+            },
+            {
+                "item_name": "Salad",
+                "item_image_url": "https://images.unsplash.com/photo-1513442542250-854d436a73f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=947&q=80",
+                "is_best_seller": true,
+                "item_price": 230,
+                "item_description": "A salad is a dish consisting of mixed, mostly natural ingredients with at least one raw ingredient. They are typically served at room temperature or chilled, though some can be served warm. Condiments and salad dressings, which exist in a variety of flavors, are often used to enhance a salad.",
+                "item_categories": [
+                    "Salad",
+                    "Healthy"
+                ],
+                "cuisine_type": [
+                    "International"
+                ]
+            },
+            {
+                "item_name": "Croissant",
+                "item_image_url": "https://images.unsplash.com/photo-1530610476181-d83430b64dcd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+                "is_best_seller": false,
+                "item_price": 150,
+                "item_description": "A croissant is a buttery, flaky, Austrian viennoiserie pastry inspired by the shape of the Austrian kipferl but using the French yeast-leavened laminated dough.",
+                "item_categories": [
+                    "Breakfast",
+                    "Dessert"
+                ],
+                "cuisine_type": [
+                    "International"
+                ]
+            },
+            {
+                "item_name": "Idli",
+                "item_image_url": "https://media.istockphoto.com/id/638506124/photo/idli-with-coconut-chutney-and-sambhar.jpg?s=2048x2048&w=is&k=20&c=Qzxjmw_Sf-ynjwixuDYbhNrp-MyorVz_u0l2una3OpM=",
+                "is_best_seller": true,
+                "item_price": 100,
+                "item_description": "Idli is a traditional South Indian steamed cake made from fermented rice and black lentil batter.",
+                "cuisine_type": [
+                    "South Indian"
+                ],
+                "is_veg": true,
+                "item_categories": [
+                    "Steamed",
+                    "Healthy"
+                ]
+            },
+            {
+                "item_name": "Rava Dosa",
+                "item_image_url": "https://media.istockphoto.com/id/525773217/photo/rava-dosa-in-plate-south-indian-snack-india.jpg?s=2048x2048&w=is&k=20&c=oIXvf7ThU-yWWOEVBiOljJ1rhRJgZl7GMGdMQyRX7QY=",
+                "is_best_seller": false,
+                "item_price": 120,
+                "item_description": "Rava Dosa is a type of South Indian crepe made from semolina (rava) and rice flour, usually served with coconut chutney and sambar.",
+                "cuisine_type": [
+                    "South Indian"
+                ],
+                "is_veg": true,
+                "item_categories": [
+                    "Main Course",
+                    "Healthy"
+                ]
+            },
+            {
+                "item_name": "Uttapam",
+                "item_image_url": "https://media.istockphoto.com/id/666848572/photo/south-indian-food-uttapam-or-ooththappam-or-uthappa.jpg?s=2048x2048&w=is&k=20&c=bed721gVPKzxZQ0oJO1I90FOC4FRCxkXHL-57zeBmpg=",
+                "is_best_seller": false,
+                "item_price": 110,
+                "item_description": "Uttapam is a thick pancake-like dish made from a batter of rice and urad dal, topped with vegetables like tomatoes, onions, and green chilies.",
+                "cuisine_type": [
+                    "South Indian"
+                ],
+                "is_veg": true,
+                "item_categories": [
+                    "Main Course",
+                    "Healthy"
+                ]
+            },
+            {
+                "item_name": "Gulab Jamun",
+                "item_image_url": "https://media.istockphoto.com/id/668147754/photo/gulab-jamun.jpg?s=2048x2048&w=is&k=20&c=zc1gWIcMmqelyiypt1aWVLXC3lV4QqH11QXZkecQDe8=",
+                "is_best_seller": true,
+                "item_price": 120,
+                "item_description": "Gulab Jamun is a popular Indian dessert made with milk solids, fried and soaked in a sweet syrup flavored with cardamom and rose water.",
+                "cuisine": "Indian",
+                "is_veg": true,
+                "item_categories": [
+                    "Dessert"
+                ],
+                "cuisine_type": [
+                    "Indian"
+                ]
+            },
+            {
+                "item_name": "Pav Bhaji",
+                "item_image_url": "https://media.istockphoto.com/id/1438867572/photo/pav-bhaji-is-a-fast-food-dish-from-india-consisting-of-a-thick-vegetable-curry-served-with.jpg?s=2048x2048&w=is&k=20&c=JXfwxdu6oqAG3Dh-IKtpCp-AiBYw75f5zofvm_QY978=",
+                "is_best_seller": true,
+                "item_price": 150,
+                "item_description": "Pav Bhaji is a popular street food in India consisting of a spicy mixture of mashed vegetables, served with lightly toasted bread rolls (pav).",
+                "cuisine": "Indian",
+                "is_veg": true,
+                "item_categories": [
+                    "Street Food",
+                    "Fast Food"
+                ],
+                "cuisine_type": [
+                    "Indian"
+                ]
+            }
+        ]
+    },
+    {
+        "restaurant_image_url": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
+        "restaurant_name": "South Indian Spice",
+        "delivery_time": 25,
+        "discount_offered": 25,
+        "is_veg": true,
+        "cuisines_available": [
+            "South Indian",
+            "Indian"
+        ],
+        "restaurant_address": "Gourmet Hub, 87, Airport Road, Navrangpura, Surat, 411001, India",
+        "restaurant_items": [
+            {
+                "item_name": "Idli",
+                "item_image_url": "https://media.istockphoto.com/id/638506124/photo/idli-with-coconut-chutney-and-sambhar.jpg?s=2048x2048&w=is&k=20&c=Qzxjmw_Sf-ynjwixuDYbhNrp-MyorVz_u0l2una3OpM=",
+                "is_best_seller": true,
+                "item_price": 100,
+                "item_description": "Idli is a traditional South Indian steamed cake made from fermented rice and black lentil batter.",
+                "cuisine_type": [
+                    "South Indian"
+                ],
+                "is_veg": true,
+                "item_categories": [
+                    "Steamed",
+                    "Healthy"
+                ]
+            },
+            {
+                "item_name": "Bisi Bele Bath",
+                "item_image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Bisi_Bele_Bath_%28Bisibelebath%29.JPG/1280px-Bisi_Bele_Bath_%28Bisibelebath%29.JPG",
+                "is_best_seller": false,
+                "item_price": 140,
+                "item_description": "Bisi Bele Bath is a traditional Karnataka dish made with rice, lentils, and vegetables, flavored with a special spice blend.",
+                "is_veg": true,
+                "item_categories": [
+                    "Main Course",
+                    "Healthy"
+                ],
+                "cuisine_type": [
+                    "South Indian"
+                ]
+            },
+            {
+                "item_name": "Rava Dosa",
+                "item_image_url": "https://media.istockphoto.com/id/525773217/photo/rava-dosa-in-plate-south-indian-snack-india.jpg?s=2048x2048&w=is&k=20&c=oIXvf7ThU-yWWOEVBiOljJ1rhRJgZl7GMGdMQyRX7QY=",
+                "is_best_seller": false,
+                "item_price": 120,
+                "item_description": "Rava Dosa is a type of South Indian crepe made from semolina (rava) and rice flour, usually served with coconut chutney and sambar.",
+                "cuisine_type": [
+                    "South Indian"
+                ],
+                "is_veg": true,
+                "item_categories": [
+                    "Main Course",
+                    "Healthy"
+                ]
+            },
+            {
+                "item_name": "Pav Bhaji",
+                "item_image_url": "https://media.istockphoto.com/id/1438867572/photo/pav-bhaji-is-a-fast-food-dish-from-india-consisting-of-a-thick-vegetable-curry-served-with.jpg?s=2048x2048&w=is&k=20&c=JXfwxdu6oqAG3Dh-IKtpCp-AiBYw75f5zofvm_QY978=",
+                "is_best_seller": true,
+                "item_price": 150,
+                "item_description": "Pav Bhaji is a popular street food in India consisting of a spicy mixture of mashed vegetables, served with lightly toasted bread rolls (pav).",
+                "cuisine": "Indian",
+                "is_veg": true,
+                "item_categories": [
+                    "Street Food",
+                    "Fast Food"
+                ],
+                "cuisine_type": [
+                    "Indian"
+                ]
+            },
+            {
+                "item_name": "Gulab Jamun",
+                "item_image_url": "https://media.istockphoto.com/id/668147754/photo/gulab-jamun.jpg?s=2048x2048&w=is&k=20&c=zc1gWIcMmqelyiypt1aWVLXC3lV4QqH11QXZkecQDe8=",
+                "is_best_seller": true,
+                "item_price": 120,
+                "item_description": "Gulab Jamun is a popular Indian dessert made with milk solids, fried and soaked in a sweet syrup flavored with cardamom and rose water.",
+                "cuisine": "Indian",
+                "is_veg": true,
+                "item_categories": [
+                    "Dessert"
+                ],
+                "cuisine_type": [
+                    "Indian"
+                ]
+            }
+        ]
+    },
+    {
+        "restaurant_image_url": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "restaurant_name": "Fried Chicken Express",
+        "delivery_time": 35,
+        "discount_offered": 14,
+        "is_veg": false,
+        "cuisines_available": [
+            "International",
+            "Western",
+            "Indian",
+            "Tibetan"
+        ],
+        "restaurant_address": "Delicious Dine, 98, Outer Ring Road, Kothrud, Surat, 380001, India",
+        "restaurant_items": [
+            {
+                "item_name": "Cheeseburger",
+                "item_image_url": "https://images.pexels.com/photos/3616956/pexels-photo-3616956.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                "is_best_seller": true,
+                "item_price": 220,
+                "item_description": "A cheeseburger is a hamburger topped with cheese. The cheese is usually added to the cooking patty shortly before serving, which allows the cheese to melt.",
+                "item_categories": [
+                    "Burger",
+                    "Fast Food",
+                    "Street Food"
+                ],
+                "cuisine_type": [
+                    "International"
+                ]
+            },
+            {
+                "item_name": "Croissant",
+                "item_image_url": "https://images.unsplash.com/photo-1530610476181-d83430b64dcd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+                "is_best_seller": false,
+                "item_price": 150,
+                "item_description": "A croissant is a buttery, flaky, Austrian viennoiserie pastry inspired by the shape of the Austrian kipferl but using the French yeast-leavened laminated dough.",
+                "item_categories": [
+                    "Breakfast",
+                    "Dessert"
+                ],
+                "cuisine_type": [
+                    "International"
+                ]
+            },
+            {
+                "item_name": "Salad",
+                "item_image_url": "https://images.unsplash.com/photo-1513442542250-854d436a73f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=947&q=80",
+                "is_best_seller": true,
+                "item_price": 230,
+                "item_description": "A salad is a dish consisting of mixed, mostly natural ingredients with at least one raw ingredient. They are typically served at room temperature or chilled, though some can be served warm. Condiments and salad dressings, which exist in a variety of flavors, are often used to enhance a salad.",
+                "item_categories": [
+                    "Salad",
+                    "Healthy"
+                ],
+                "cuisine_type": [
+                    "International"
+                ]
+            },
+            {
+                "item_name": "Cheesecake",
+                "item_image_url": "https://media.istockphoto.com/id/1225491381/photo/cheesecake-with-caramel-sauce.jpg?s=2048x2048&w=is&k=20&c=jBqK-gGJRwSrNc2rvRYMTd06K8uez--CCnffNMVwjm0=",
+                "is_best_seller": false,
+                "item_price": 200,
+                "item_description": "Cheesecake is a sweet dessert consisting of one or more layers. The main, and thickest layer, consists of a mixture of soft, fresh cheese, eggs, and sugar. ",
+                "cuisine": "Western",
+                "is_veg": true,
+                "item_categories": [
+                    "Dessert"
+                ],
+                "cuisine_type": [
+                    "Western"
+                ]
+            },
+            {
+                "item_name": "Gulab Jamun",
+                "item_image_url": "https://media.istockphoto.com/id/668147754/photo/gulab-jamun.jpg?s=2048x2048&w=is&k=20&c=zc1gWIcMmqelyiypt1aWVLXC3lV4QqH11QXZkecQDe8=",
+                "is_best_seller": true,
+                "item_price": 120,
+                "item_description": "Gulab Jamun is a popular Indian dessert made with milk solids, fried and soaked in a sweet syrup flavored with cardamom and rose water.",
+                "cuisine": "Indian",
+                "is_veg": true,
+                "item_categories": [
+                    "Dessert"
+                ],
+                "cuisine_type": [
+                    "Indian"
+                ]
+            },
+            {
+                "item_name": "Pav Bhaji",
+                "item_image_url": "https://media.istockphoto.com/id/1438867572/photo/pav-bhaji-is-a-fast-food-dish-from-india-consisting-of-a-thick-vegetable-curry-served-with.jpg?s=2048x2048&w=is&k=20&c=JXfwxdu6oqAG3Dh-IKtpCp-AiBYw75f5zofvm_QY978=",
+                "is_best_seller": true,
+                "item_price": 150,
+                "item_description": "Pav Bhaji is a popular street food in India consisting of a spicy mixture of mashed vegetables, served with lightly toasted bread rolls (pav).",
+                "cuisine": "Indian",
+                "is_veg": true,
+                "item_categories": [
+                    "Street Food",
+                    "Fast Food"
+                ],
+                "cuisine_type": [
+                    "Indian"
+                ]
+            },
+            {
+                "item_name": "Momo",
+                "item_image_url": "https://media.istockphoto.com/id/488222396/photo/pan-fried-pot-stickers-with-soy-sauce.jpg?s=2048x2048&w=is&k=20&c=1xH4yP3ROhPYAPoDZWR_l2dIHJym0BkWM2Cb8vpGVns=",
+                "is_best_seller": false,
+                "item_price": 100,
+                "item_description": "Momo is a type of South Asian dumpling, popular in Nepal, Tibet, and parts of India. They are filled with vegetables or meat, and often served with a spicy dipping sauce.",
+                "cuisine": "Tibetan",
+                "is_veg": false,
+                "item_categories": [
+                    "Dumpling",
+                    "Fast Food",
+                    "Street Food"
+                ],
+                "cuisine_type": [
+                    "Tibetan"
+                ]
+            }
+        ]
+    },
+    {
+        "restaurant_image_url": "https://images.unsplash.com/photo-1511909525232-61113c912358?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1112&q=80",
+        "restaurant_name": "Noodle and Spice",
+        "delivery_time": 40,
+        "discount_offered": 0,
+        "is_veg": false,
+        "cuisines_available": [
+            "South Indian",
+            "International"
+        ],
+        "restaurant_address": "Delicious Dine, 84, MG Road, Connaught Place, Pune, 400001, India",
+        "restaurant_items": [
+            {
+                "item_name": "Idli",
+                "item_image_url": "https://media.istockphoto.com/id/638506124/photo/idli-with-coconut-chutney-and-sambhar.jpg?s=2048x2048&w=is&k=20&c=Qzxjmw_Sf-ynjwixuDYbhNrp-MyorVz_u0l2una3OpM=",
+                "is_best_seller": true,
+                "item_price": 100,
+                "item_description": "Idli is a traditional South Indian steamed cake made from fermented rice and black lentil batter.",
+                "cuisine_type": [
+                    "South Indian"
+                ],
+                "is_veg": true,
+                "item_categories": [
+                    "Steamed",
+                    "Healthy"
+                ]
+            },
+            {
+                "item_name": "Bisi Bele Bath",
+                "item_image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Bisi_Bele_Bath_%28Bisibelebath%29.JPG/1280px-Bisi_Bele_Bath_%28Bisibelebath%29.JPG",
+                "is_best_seller": false,
+                "item_price": 140,
+                "item_description": "Bisi Bele Bath is a traditional Karnataka dish made with rice, lentils, and vegetables, flavored with a special spice blend.",
+                "is_veg": true,
+                "item_categories": [
+                    "Main Course",
+                    "Healthy"
+                ],
+                "cuisine_type": [
+                    "South Indian"
+                ]
+            },
+            {
+                "item_name": "Rava Dosa",
+                "item_image_url": "https://media.istockphoto.com/id/525773217/photo/rava-dosa-in-plate-south-indian-snack-india.jpg?s=2048x2048&w=is&k=20&c=oIXvf7ThU-yWWOEVBiOljJ1rhRJgZl7GMGdMQyRX7QY=",
+                "is_best_seller": false,
+                "item_price": 120,
+                "item_description": "Rava Dosa is a type of South Indian crepe made from semolina (rava) and rice flour, usually served with coconut chutney and sambar.",
+                "cuisine_type": [
+                    "South Indian"
+                ],
+                "is_veg": true,
+                "item_categories": [
+                    "Main Course",
+                    "Healthy"
+                ]
+            },
+            {
+                "item_name": "Eggtoast",
+                "item_image_url": "https://images.unsplash.com/photo-1525351484163-7529414344d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+                "is_best_seller": true,
+                "item_price": 110,
+                "item_description": "Eggs provide a source of protein and fat, while toast is a source of complex carbohydrates. Together, this triple whammy offers good nutrient diversity, which is fundamental for a healthy breakfast that keeps you full for longer.",
+                "item_categories": [
+                    "Breakfast",
+                    "Healthy"
+                ],
+                "cuisine_type": [
+                    "International"
+                ]
+            },
+            {
+                "item_name": "Cheeseburger",
+                "item_image_url": "https://images.pexels.com/photos/3616956/pexels-photo-3616956.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                "is_best_seller": true,
+                "item_price": 220,
+                "item_description": "A cheeseburger is a hamburger topped with cheese. The cheese is usually added to the cooking patty shortly before serving, which allows the cheese to melt.",
+                "item_categories": [
+                    "Burger",
+                    "Fast Food",
+                    "Street Food"
+                ],
+                "cuisine_type": [
+                    "International"
+                ]
+            },
+            {
+                "item_name": "Pancake",
+                "item_image_url": "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+                "is_best_seller": true,
+                "item_price": 180,
+                "item_description": "A pancake is a flat cake, often thin and round, prepared from a starch-based batter that may contain eggs, milk and butter and cooked on a hot surface such as a griddle or frying pan, often frying with oil or butter. It is a type of batter bread.",
+                "item_categories": [
+                    "Breakfast",
+                    "Dessert"
+                ],
+                "cuisine_type": [
+                    "International"
+                ]
+            }
+        ]
+    },
+    {
+        "restaurant_image_url": "https://images.unsplash.com/photo-1513442542250-854d436a73f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=947&q=80",
+        "restaurant_name": "BBQ Fusion",
+        "delivery_time": 50,
+        "discount_offered": 70,
+        "is_veg": true,
+        "cuisines_available": [
+            "Italian",
+            "North Indian",
+            "Mexican",
+            "Western"
+        ],
+        "restaurant_address": "Yummy Bites, 6, Mount Road, Kothrud, Pune, 600001, India",
+        "restaurant_items": [
+            {
+                "item_name": "Tiramisu",
+                "item_image_url": "https://media.istockphoto.com/id/1248489319/photo/tiramisu-cake-with-mint.jpg?s=2048x2048&w=is&k=20&c=Lx-lRBCgDJyk9YO5Ht7xjAdIzP7o2XvlPTrykV3xnuA=",
+                "is_best_seller": true,
+                "item_price": 180,
+                "item_description": "Tiramisu is a classic Italian dessert made with layers of coffee-soaked ladyfingers and mascarpone cheese, flavored with cocoa powder.",
+                "cuisine": "Italian",
+                "is_veg": true,
+                "item_categories": [
+                    "Dessert"
+                ],
+                "cuisine_type": [
+                    "Italian"
+                ]
+            },
+            {
+                "item_name": "Spaghetti Bolognese",
+                "item_image_url": "https://images.pexels.com/photos/6287527/pexels-photo-6287527.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                "is_best_seller": true,
+                "item_price": 250,
+                "item_description": "Spaghetti Bolognese is a classic Italian dish made with ground meat, tomatoes, onions, and various spices served over spaghetti noodles.",
+                "item_categories": [
+                    "Pasta",
+                    "Healthy",
+                    "Street Food"
+                ],
+                "cuisine_type": [
+                    "Italian"
+                ]
+            },
+            {
+                "item_name": "Pasta",
+                "item_image_url": "https://media.istockphoto.com/id/1215312647/photo/pasta-fettuccine-with-beef-ragout-sauce-in-black-bowl-grey-background-close-up-top-view.jpg?s=2048x2048&w=is&k=20&c=P6fGBwYeIM2rEVwgP0nepaxvF4jg8ogFLBcDJWiq30A=",
+                "is_best_seller": true,
+                "item_price": 180,
+                "item_description": "Pasta is a type of Italian food typically made from an unleavened dough of durum wheat flour mixed with water or eggs, and formed into sheets or other shapes, then cooked by boiling or baking.",
+                "cuisine": "Italian",
+                "is_veg": true,
+                "item_categories": [
+                    "Pasta",
+                    "Healthy"
+                ],
+                "cuisine_type": [
+                    "Italian"
+                ]
+            },
+            {
+                "item_name": "Chicken Biryani",
+                "item_image_url": "https://media.istockphoto.com/id/1345624336/photo/chicken-biriyani.jpg?s=2048x2048&w=is&k=20&c=uU0uuti6KOvpQhXuu6VMpgi021o1vZXfOhpMrJXSn1o=",
+                "is_best_seller": false,
+                "item_price": 350,
+                "item_description": "Chicken biryani is a mixed rice dish originating among the Muslims of the Indian subcontinent. It is made with Indian spices, rice, and usually, chicken.",
+                "cuisine_type": [
+                    "North Indian"
+                ],
+                "item_categories": [
+                    "Main Course"
+                ]
+            },
+            {
+                "item_name": "Butter Chicken",
+                "item_image_url": "https://media.istockphoto.com/id/1479262112/photo/butter-chicken.jpg?s=2048x2048&w=is&k=20&c=MF7fqkqcX_NMql0_zD4HFoo8A088HyeWiK2M1caQrVk=",
+                "is_best_seller": true,
+                "item_price": 320,
+                "item_description": "Butter chicken, also known as murgh makhani, is a dish of chicken in a spiced tomato, butter, and cream sauce. It is one of the most popular Indian curries worldwide.",
+                "cuisine_type": [
+                    "North Indian"
+                ],
+                "item_categories": [
+                    "Main Course"
+                ]
+            },
+            {
+                "item_name": "Dal Makhani",
+                "item_image_url": "https://media.istockphoto.com/id/1443601229/photo/dal-makhani-or-butter-daal-served-in-dish-isolated-on-table-top-view-of-asian-and-indian-food.jpg?s=2048x2048&w=is&k=20&c=raVdOJ34y4ds4DQi5fkBxgx4MvI0C27KJzk3q7WKI0k=",
+                "is_best_seller": true,
+                "item_price": 250,
+                "item_description": "Dal makhani is a popular dish from the Punjab region of the Indian subcontinent. The primary ingredients are whole black lentil (urad), red kidney beans (rajma), butter, and cream.",
+                "cuisine_type": [
+                    "North Indian"
+                ],
+                "item_categories": [
+                    "Main Course"
+                ]
+            },
+            {
+                "item_name": "Tacos",
+                "item_image_url": "https://images.pexels.com/photos/2092507/pexels-photo-2092507.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                "is_best_seller": false,
+                "item_price": 180,
+                "item_description": "Tacos is a traditional Mexican dish consisting of a small hand-sized corn or wheat tortilla topped with a filling.",
+                "item_categories": [
+                    "Street Food"
+                ],
+                "cuisine_type": [
+                    "Mexican"
+                ]
+            },
+            {
+                "item_name": "Churros",
+                "item_image_url": "https://media.istockphoto.com/id/939303754/photo/traditional-spanish-dessert-churros.jpg?s=2048x2048&w=is&k=20&c=mUNlphwVaHX5cN8OEu8Zgku8v0HnbcCkcXcarLsyUjw=",
+                "is_best_seller": false,
+                "item_price": 150,
+                "item_description": "Churros are fried-dough pastries, which are normally sprinkled with sugar. Churros are generally pricked with a hole, a it\u2019s a the or even filled",
+                "cuisine": "Mexican",
+                "is_veg": true,
+                "item_categories": [
+                    "Fast Food",
+                    "Street Food"
+                ],
+                "cuisine_type": [
+                    "Mexican"
+                ]
+            },
+            {
+                "item_name": "Cheesecake",
+                "item_image_url": "https://media.istockphoto.com/id/1225491381/photo/cheesecake-with-caramel-sauce.jpg?s=2048x2048&w=is&k=20&c=jBqK-gGJRwSrNc2rvRYMTd06K8uez--CCnffNMVwjm0=",
+                "is_best_seller": false,
+                "item_price": 200,
+                "item_description": "Cheesecake is a sweet dessert consisting of one or more layers. The main, and thickest layer, consists of a mixture of soft, fresh cheese, eggs, and sugar. ",
+                "cuisine": "Western",
+                "is_veg": true,
+                "item_categories": [
+                    "Dessert"
+                ],
+                "cuisine_type": [
+                    "Western"
+                ]
+            }
+        ]
+    },
+    {
+        "restaurant_image_url": "https://images.unsplash.com/photo-1528207776546-365bb710ee93?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "restaurant_name": "International Sandwiches",
+        "delivery_time": 20,
+        "discount_offered": 0,
+        "is_veg": true,
+        "cuisines_available": [
+            "International",
+            "Western"
+        ],
+        "restaurant_address": "Gourmet Hub, 31, Baner Road, Banjara Hills, Delhi, 110001, India",
+        "restaurant_items": [
+            {
+                "item_name": "Salad",
+                "item_image_url": "https://images.unsplash.com/photo-1513442542250-854d436a73f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=947&q=80",
+                "is_best_seller": true,
+                "item_price": 230,
+                "item_description": "A salad is a dish consisting of mixed, mostly natural ingredients with at least one raw ingredient. They are typically served at room temperature or chilled, though some can be served warm. Condiments and salad dressings, which exist in a variety of flavors, are often used to enhance a salad.",
+                "item_categories": [
+                    "Salad",
+                    "Healthy"
+                ],
+                "cuisine_type": [
+                    "International"
+                ]
+            },
+            {
+                "item_name": "Pancake",
+                "item_image_url": "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+                "is_best_seller": true,
+                "item_price": 180,
+                "item_description": "A pancake is a flat cake, often thin and round, prepared from a starch-based batter that may contain eggs, milk and butter and cooked on a hot surface such as a griddle or frying pan, often frying with oil or butter. It is a type of batter bread.",
+                "item_categories": [
+                    "Breakfast",
+                    "Dessert"
+                ],
+                "cuisine_type": [
+                    "International"
+                ]
+            },
+            {
+                "item_name": "Cheeseburger",
+                "item_image_url": "https://images.pexels.com/photos/3616956/pexels-photo-3616956.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                "is_best_seller": true,
+                "item_price": 220,
+                "item_description": "A cheeseburger is a hamburger topped with cheese. The cheese is usually added to the cooking patty shortly before serving, which allows the cheese to melt.",
+                "item_categories": [
+                    "Burger",
+                    "Fast Food",
+                    "Street Food"
+                ],
+                "cuisine_type": [
+                    "International"
+                ]
+            },
+            {
+                "item_name": "Cheesecake",
+                "item_image_url": "https://media.istockphoto.com/id/1225491381/photo/cheesecake-with-caramel-sauce.jpg?s=2048x2048&w=is&k=20&c=jBqK-gGJRwSrNc2rvRYMTd06K8uez--CCnffNMVwjm0=",
+                "is_best_seller": false,
+                "item_price": 200,
+                "item_description": "Cheesecake is a sweet dessert consisting of one or more layers. The main, and thickest layer, consists of a mixture of soft, fresh cheese, eggs, and sugar. ",
+                "cuisine": "Western",
+                "is_veg": true,
+                "item_categories": [
+                    "Dessert"
+                ],
+                "cuisine_type": [
+                    "Western"
+                ]
+            }
+        ]
+    },
+    {
+        "restaurant_image_url": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80",
+        "restaurant_name": "Italian Tibetan Delights",
+        "delivery_time": 30,
+        "discount_offered": 30,
+        "is_veg": false,
+        "cuisines_available": [
+            "Italian",
+            "Tibetan"
+        ],
+        "restaurant_address": "Yummy Bites, 99, MG Road, Andheri, Pune, 380001, India",
+        "restaurant_items": [
+            {
+                "item_name": "Spaghetti Bolognese",
+                "item_image_url": "https://images.pexels.com/photos/6287527/pexels-photo-6287527.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                "is_best_seller": true,
+                "item_price": 250,
+                "item_description": "Spaghetti Bolognese is a classic Italian dish made with ground meat, tomatoes, onions, and various spices served over spaghetti noodles.",
+                "item_categories": [
+                    "Pasta",
+                    "Healthy",
+                    "Street Food"
+                ],
+                "cuisine_type": [
+                    "Italian"
+                ]
+            },
+            {
+                "item_name": "Pizza",
+                "item_image_url": "https://images.pexels.com/photos/1653877/pexels-photo-1653877.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                "is_best_seller": true,
+                "item_price": 300,
+                "item_description": "Pizza is a savory dish of Italian origin consisting of a usually round, flattened base of leavened wheat-based dough topped with tomatoes, cheese, and often various other ingredients.",
+                "item_categories": [
+                    "Pizza",
+                    "Street Food",
+                    "Fast Food"
+                ],
+                "cuisine_type": [
+                    "Italian"
+                ]
+            },
+            {
+                "item_name": "Tiramisu",
+                "item_image_url": "https://media.istockphoto.com/id/1248489319/photo/tiramisu-cake-with-mint.jpg?s=2048x2048&w=is&k=20&c=Lx-lRBCgDJyk9YO5Ht7xjAdIzP7o2XvlPTrykV3xnuA=",
+                "is_best_seller": true,
+                "item_price": 180,
+                "item_description": "Tiramisu is a classic Italian dessert made with layers of coffee-soaked ladyfingers and mascarpone cheese, flavored with cocoa powder.",
+                "cuisine": "Italian",
+                "is_veg": true,
+                "item_categories": [
+                    "Dessert"
+                ],
+                "cuisine_type": [
+                    "Italian"
+                ]
+            },
+            {
+                "item_name": "Momo",
+                "item_image_url": "https://media.istockphoto.com/id/488222396/photo/pan-fried-pot-stickers-with-soy-sauce.jpg?s=2048x2048&w=is&k=20&c=1xH4yP3ROhPYAPoDZWR_l2dIHJym0BkWM2Cb8vpGVns=",
+                "is_best_seller": false,
+                "item_price": 100,
+                "item_description": "Momo is a type of South Asian dumpling, popular in Nepal, Tibet, and parts of India. They are filled with vegetables or meat, and often served with a spicy dipping sauce.",
+                "cuisine": "Tibetan",
+                "is_veg": false,
+                "item_categories": [
+                    "Dumpling",
+                    "Fast Food",
+                    "Street Food"
+                ],
+                "cuisine_type": [
+                    "Tibetan"
+                ]
+            }
+        ]
+    },
+    {
+        "restaurant_image_url": "https://images.unsplash.com/photo-1570696516188-ade861b84a49?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "restaurant_name": "Smoothie & Chinese",
+        "delivery_time": 15,
+        "discount_offered": 0,
+        "is_veg": true,
+        "cuisines_available": [
+            "North Indian",
+            "Chinese",
+            "Western"
+        ],
+        "restaurant_address": "Culinary Corner, 3, Mount Road, Banjara Hills, Delhi, 110001, India",
+        "restaurant_items": [
+            {
+                "item_name": "Paneer Tikka Masala",
+                "item_image_url": "https://media.istockphoto.com/id/1341648452/photo/paneer-tikka-high-resolution-stock-photo.jpg?s=2048x2048&w=is&k=20&c=K_37oRZFvl8x3xvGEQYGGFDjfr2m-c7dHu5GvFXaZ6k=",
+                "is_best_seller": false,
+                "item_price": 290,
+                "item_description": "Paneer tikka masala is a vegetarian dish from India consisting of marinated paneer cheese served in a spiced gravy. It is a popular dish in Indian cuisine and is known for its rich flavor.",
+                "cuisine_type": [
+                    "North Indian"
+                ],
+                "item_categories": [
+                    "Main Course"
+                ]
+            },
+            {
+                "item_name": "Dal Makhani",
+                "item_image_url": "https://media.istockphoto.com/id/1443601229/photo/dal-makhani-or-butter-daal-served-in-dish-isolated-on-table-top-view-of-asian-and-indian-food.jpg?s=2048x2048&w=is&k=20&c=raVdOJ34y4ds4DQi5fkBxgx4MvI0C27KJzk3q7WKI0k=",
+                "is_best_seller": true,
+                "item_price": 250,
+                "item_description": "Dal makhani is a popular dish from the Punjab region of the Indian subcontinent. The primary ingredients are whole black lentil (urad), red kidney beans (rajma), butter, and cream.",
+                "cuisine_type": [
+                    "North Indian"
+                ],
+                "item_categories": [
+                    "Main Course"
+                ]
+            },
+            {
+                "item_name": "Butter Chicken",
+                "item_image_url": "https://media.istockphoto.com/id/1479262112/photo/butter-chicken.jpg?s=2048x2048&w=is&k=20&c=MF7fqkqcX_NMql0_zD4HFoo8A088HyeWiK2M1caQrVk=",
+                "is_best_seller": true,
+                "item_price": 320,
+                "item_description": "Butter chicken, also known as murgh makhani, is a dish of chicken in a spiced tomato, butter, and cream sauce. It is one of the most popular Indian curries worldwide.",
+                "cuisine_type": [
+                    "North Indian"
+                ],
+                "item_categories": [
+                    "Main Course"
+                ]
+            },
+            {
+                "item_name": "Spring Rolls",
+                "item_image_url": "https://media.istockphoto.com/id/1577136375/photo/spicy-fried-chicken-rolls.jpg?s=2048x2048&w=is&k=20&c=8jqvFZczmeCARcY1Ydxnh82v1mcSvS2pMvCS64lzFXg=",
+                "is_best_seller": true,
+                "item_price": 120,
+                "item_description": "Spring rolls are a large variety of filled, rolled appetizers or dim sum found in East Asian, South Asian, and Southeast Asian cuisine. The name is a literal translation of the Chinese \u6625\u5377 (pinyin: ch\u016bnju\u01cen / ch\u016bnju\u00e0n).",
+                "item_categories": [
+                    "Appetizer",
+                    "Street Food",
+                    "Fast Food"
+                ],
+                "cuisine_type": [
+                    "Chinese"
+                ]
+            },
+            {
+                "item_name": "Hot and Sour Soup",
+                "item_image_url": "https://media.istockphoto.com/id/1442576436/photo/hot-and-sour-soup-with-green-onion-served-in-a-bowl-isolated-on-table-top-view-of-taiwanese.jpg?s=2048x2048&w=is&k=20&c=07ov60B6SApqz644OfttL9_DmtA7valHcI4vevRnJg4=",
+                "is_best_seller": false,
+                "item_price": 190,
+                "item_description": "Hot and sour soup is a variety of soups from several Asian culinary traditions. In all cases, the soup contains ingredients to make it both spicy and sour.",
+                "cuisine_type": [
+                    "Chinese"
+                ],
+                "item_categories": [
+                    "Soup",
+                    "Healthy"
+                ]
+            },
+            {
+                "item_name": "Kung Pao Chicken",
+                "item_image_url": "https://media.istockphoto.com/id/1208954729/photo/image-of-bowl-of-spicy-kung-pao-chicken-with-mixed-vegetables-including-spring-onions.jpg?s=2048x2048&w=is&k=20&c=6EvC0Q0XfLPw8cw3g4-pQdicI3jXQ71BxSsVF5mQRQ0=",
+                "is_best_seller": true,
+                "item_price": 280,
+                "item_description": "Kung Pao chicken, also transcribed as Gong Bao or Kung Po, is a spicy, stir-fried Chinese dish made with chicken, peanuts, vegetables, and chili peppers.",
+                "cuisine_type": [
+                    "Chinese"
+                ],
+                "item_categories": [
+                    "Main Course"
+                ]
+            },
+            {
+                "item_name": "Cheesecake",
+                "item_image_url": "https://media.istockphoto.com/id/1225491381/photo/cheesecake-with-caramel-sauce.jpg?s=2048x2048&w=is&k=20&c=jBqK-gGJRwSrNc2rvRYMTd06K8uez--CCnffNMVwjm0=",
+                "is_best_seller": false,
+                "item_price": 200,
+                "item_description": "Cheesecake is a sweet dessert consisting of one or more layers. The main, and thickest layer, consists of a mixture of soft, fresh cheese, eggs, and sugar. ",
+                "cuisine": "Western",
+                "is_veg": true,
+                "item_categories": [
+                    "Dessert"
+                ],
+                "cuisine_type": [
+                    "Western"
+                ]
+            }
+        ]
+    }
+]

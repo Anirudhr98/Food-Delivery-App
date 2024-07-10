@@ -11,19 +11,21 @@ const restaurantitemsSchema = new mongoose.Schema({
     item_image_url: { type: String, required: true },
     item_description: { type: String },
     item_price: { type: Number, required: true },
-    is_best_seller: { type: Boolean, default: false }
+    cuisine_type: [{ type: String, required: true}],
+    item_categories: [{ type: String, required: true}],
+    is_best_seller: { type: Boolean, default: false },
+    is_veg: { type: Boolean, required: true }
 });
 
 const restaurantSchema = new mongoose.Schema({
     restaurant_name: { type: String, required: true },
     restaurant_items: [restaurantitemsSchema],
     restaurant_address: { type: String, required: true },
-    cuisines: { type: Array, required: true },
+    cuisines_available: { type: Array, required: true },
     restaurant_image_url: { type: String, required: true },
     discount_offered: { type: Number, default: 0 },
     delivery_time: { type: Number, default:30},
     orders: [ordersSchema],
-    is_veg: { type: Boolean, required: true }
 });
 
 const restaurantownerSchema = new mongoose.Schema({

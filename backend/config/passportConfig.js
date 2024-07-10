@@ -4,8 +4,10 @@ import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
 import { Strategy as LocalStrategy } from 'passport-local';
 import models from '../models/models.js';
 import bcrypt from 'bcryptjs';
-const { UserModel} = models;
+const { UserModel, RestaurantOwnerModel } = models;
 
+
+// User Model
 passport.use(new LocalStrategy({
   usernameField: 'email',
   passwordField: 'password',
@@ -24,6 +26,8 @@ passport.use(new LocalStrategy({
     return done(err);
   }
 }));
+
+
 
 // passport.use(new GoogleStrategy({
 //   clientID: process.env.GOOGLE_CLIENT_ID,
@@ -58,5 +62,26 @@ passport.deserializeUser(async (id, done) => {
     done(err);
   }
 });
+
+passport.use('restaurant-owner-local',new LocalStrategy({
+  usernameField: 'email',
+  passwordField: 'password',
+}, async (email, password, done) => {
+  try {
+    const user = await RestaurantOwnerModel.findOne({ owner_email:email });
+    if (!user) {
+      return done(null, false, { message: 'Email not found.' });
+    }
+    const isMatch = await bcrypt.compare(password, user.owner_password);
+    if (!isMatch) {
+      return done(null, false, { message: 'Incorrect password.' });
+    }
+    return done(null, user);
+  } catch (err) {
+    return done(err);
+  }
+}));
+
+
 
 export default passport;

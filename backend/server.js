@@ -3,7 +3,7 @@ import session from 'express-session';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import passport from './config/passportConfig.js';
-import router from './routes/routes.js';
+import {UserRouter,RestaurantOwnerRouter,RestaurantsRouter} from './routes/routes.js';
 import 'dotenv/config';
 
 const app = express();
@@ -36,7 +36,8 @@ app.use(passport.session());
 app.get('/', (req, res) => {
   res.send("Home Page Request");
 });
-app.use('/user', router);
-app.use('/register',router);
+app.use('/user', UserRouter);
+app.use('/restaurant-owner',RestaurantOwnerRouter);
+app.use('/restaurants', RestaurantsRouter);
 
 app.listen(port, () => console.log(`Listening on port localhost:${port}`));
