@@ -1,9 +1,9 @@
 import passport from 'passport';
-// import LocalStrategy from 'passport-local';
 import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
 import { Strategy as LocalStrategy } from 'passport-local';
 import models from '../models/models.js';
 import bcrypt from 'bcryptjs';
+import 'dotenv/config';
 const { UserModel, RestaurantOwnerModel } = models;
 
 
@@ -28,27 +28,44 @@ passport.use(new LocalStrategy({
 }));
 
 
+passport.use(new GoogleStrategy({
+    clientID: process.env.GoogleClientID,
+    clientSecret: process.env.GoogleClientSecret,
+    callbackURL: 'http://localhost:4000/user/auth/google/callback'
+  },
+  async (accessToken, refreshToken, profile, done) => {
+    try {
+      let user = await UserModel.findOne({ googleId: profile.id });
+      if (user) {
+        return done(null, user);
+      }
+      user = new UserModel({
+        name: profile.displayName,
+        email: profile.emails[0].value,
+        googleId: profile.id
+      });
+      await user.save();
+      done(null, user);
+    } catch (error) {
+      done(error, null);
+    }
+  }
+));
 
-// passport.use(new GoogleStrategy({
-//   clientID: process.env.GOOGLE_CLIENT_ID,
-//   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-//   callbackURL: '/auth/google/callback',
-// }, async (accessToken, refreshToken, profile, done) => {
-//   try {
-//     let user = await UserModel.findOne({ googleId: profile.id });
-//     if (!user) {
-//       user = new User({
-//         googleId: profile.id,
-//         name: profile.displayName,
-//         email: profile.emails[0].value,
-//       });
-//       await user.save();
-//     }
-//     return done(null, user);
-//   } catch (err) {
-//     return done(err);
-//   }
-// }));
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
+
+passport.deserializeUser(async (id, done) => {
+  try {
+    const user = await User.findById(id);
+    done(null, user);
+  } catch (error) {
+    done(error, null);
+  }
+});
+
+
 
 passport.serializeUser((user, done) => {
   done(null, user.id);

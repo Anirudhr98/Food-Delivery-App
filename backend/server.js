@@ -3,14 +3,14 @@ import session from 'express-session';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import passport from './config/passportConfig.js';
-import {UserRouter,RestaurantOwnerRouter,RestaurantsRouter} from './routes/routes.js';
+import {UserRouter,RestaurantsRouter} from './routes/routes.js';
 import 'dotenv/config';
 
 const app = express();
 const port = 4000;
 
 // Db connection
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(process.env.MONGODB_URI,{ dbName: 'AR7FoodDelivery'})
   .then(() => {
     console.log("DB Connected to AR7FoodDeliveryApp");
   })
@@ -37,7 +37,8 @@ app.get('/', (req, res) => {
   res.send("Home Page Request");
 });
 app.use('/user', UserRouter);
-app.use('/restaurant-owner',RestaurantOwnerRouter);
+// app.use('/restaurant-owner',RestaurantOwnerRouter);
 app.use('/restaurants', RestaurantsRouter);
+
 
 app.listen(port, () => console.log(`Listening on port localhost:${port}`));

@@ -28,25 +28,33 @@ const restaurantSchema = new mongoose.Schema({
     orders: [ordersSchema],
 });
 
-const restaurantownerSchema = new mongoose.Schema({
-    owner_name: { type: String, required: true },
-    owner_email: { type: String, required: true },
-    owner_password: { type: String, required: true},
+// const restaurantownerSchema = new mongoose.Schema({
+//     owner_name: { type: String, required: true },
+//     owner_email: { type: String, required: true },
+//     owner_password: { type: String, required: true},
+//     restaurants_owned: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Restaurant' }]
+// });
+
+const userSchema = new mongoose.Schema({
+    googleId: { type: String },
+    name: { type: String, required: true },
+    email: { type: String, required: true },
+    password: { type: String },
+    address: { type: String },
+    orders: [ordersSchema],
+    registered_as: {
+        type: String,
+        enum: ['user', 'restaurant_owner'],
+        default: 'user' 
+        },
     restaurants_owned: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Restaurant' }]
 });
 
-const userSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    email: { type: String, required: true },
-    password: { type: String, required: true},
-    address: { type: String },
-    orders: [ordersSchema]
-});
 
 const UserModel = mongoose.model("User", userSchema);
-const RestaurantOwnerModel = mongoose.model("RestaurantOwner", restaurantownerSchema);
+// const RestaurantOwnerModel = mongoose.model("RestaurantOwner", restaurantownerSchema);
 const RestaurantModel = mongoose.model("Restaurant", restaurantSchema);
 const RestaurantItemModel = mongoose.model('RestaurantItem', restaurantitemsSchema);
 const OrdersModel = mongoose.model('Orders', ordersSchema);
 
-export default { UserModel, RestaurantOwnerModel, RestaurantModel, RestaurantItemModel, OrdersModel };
+export default { UserModel, RestaurantModel, RestaurantItemModel, OrdersModel };
