@@ -4,7 +4,7 @@ import { Strategy as LocalStrategy } from 'passport-local';
 import models from '../models/models.js';
 import bcrypt from 'bcryptjs';
 import 'dotenv/config';
-const { UserModel, RestaurantOwnerModel } = models;
+const { UserModel } = models;
 
 
 // User Model
@@ -58,47 +58,12 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser(async (id, done) => {
   try {
-    const user = await User.findById(id);
-    done(null, user);
-  } catch (error) {
-    done(error, null);
-  }
-});
-
-
-
-passport.serializeUser((user, done) => {
-  done(null, user.id);
-});
-
-passport.deserializeUser(async (id, done) => {
-  try {
     const user = await UserModel.findById(id);
     done(null, user);
   } catch (err) {
     done(err);
   }
 });
-
-passport.use('restaurant-owner-local',new LocalStrategy({
-  usernameField: 'email',
-  passwordField: 'password',
-}, async (email, password, done) => {
-  try {
-    const user = await RestaurantOwnerModel.findOne({ owner_email:email });
-    if (!user) {
-      return done(null, false, { message: 'Email not found.' });
-    }
-    const isMatch = await bcrypt.compare(password, user.owner_password);
-    if (!isMatch) {
-      return done(null, false, { message: 'Incorrect password.' });
-    }
-    return done(null, user);
-  } catch (err) {
-    return done(err);
-  }
-}));
-
 
 
 export default passport;
