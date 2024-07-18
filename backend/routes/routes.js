@@ -26,6 +26,6 @@ UserRouter.get('/auth/google/callback',
 // RestaurantOwnerRouter.post('/login', loginOwner);
 // RestaurantOwnerRouter.get('/logout', logoutOwner);
 
-RestaurantsRouter.get('/getallrestaurants',getallrestaurants)
+RestaurantsRouter.get('/',getallrestaurants)
 
 export {UserRouter,RestaurantOwnerRouter,RestaurantsRouter,SeedingRouter}

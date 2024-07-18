@@ -1,5 +1,6 @@
 import logo from '../../../../assets/logo.png';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 
@@ -15,10 +16,12 @@ const Navbar = () => {
     <nav className="bg-gray-100 p-4 shadow-md">
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo and Website Name */}
+        <Link to='/'>
         <div className="flex items-center space-x-2">
           <img src={logo} alt="Logo" className="h-16 w-auto" />
           <span className="text-xl font-semibold">AR7 Food Delivery</span>
         </div>
+        </Link>
 
         {/* Search Bar */}
         <div className="flex-1 mx-4 ml-32 hidden md:flex">
@@ -26,11 +29,13 @@ const Navbar = () => {
         </div>
 
         {/* Signup Button */}
+        <Link to='/signup'>
         <Button
           className="bg-orange-400 text-white hover:bg-orange-500 hidden md:inline-block"
         >
           Sign Up
         </Button>
+        </Link>
 
         {/* Mobile Menu Toggle */}
         <button
@@ -49,11 +54,13 @@ const Navbar = () => {
           <div className="mb-4">
             <Input type="text" placeholder="Search..." className="w-full" />
           </div>
+        <Link to='/signup'>
           <Button
             className="bg-orange-300 text-white hover:bg-orange-400 w-full"
           >
             Sign Up
           </Button>
+          </Link>
         </div>
       )}
     </nav>
