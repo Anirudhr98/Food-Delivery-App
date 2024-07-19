@@ -29,10 +29,12 @@ export default function Login() {
   const handleSubmit = async(e) => {
     e.preventDefault();
     try{
-      await api.post(`${backend_base_url}/user/login`,loginForm)
+      const response = await api.post(`${backend_base_url}/user/login`,loginForm)
       setLoginForm({email:'',password:''})
       navigate('/',{replace:true})
       toast.success("Successfully logged in!")
+      console.log("Response is ",response)
+      toast.success(`User details are: ${response}`)
 
     }catch(error){
       const error_message = error.response?.data?.message || 'Error logging you in'

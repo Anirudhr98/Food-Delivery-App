@@ -53,12 +53,12 @@ passport.use(new GoogleStrategy({
 ));
 
 passport.serializeUser((user, done) => {
-  done(null, user.id);
+  done(null, user._id);
 });
 
 passport.deserializeUser(async (id, done) => {
   try {
-    const user = await UserModel.findById(id);
+    const user = await UserModel.findById(_id).select('-password');;
     done(null, user);
   } catch (err) {
     done(err);
