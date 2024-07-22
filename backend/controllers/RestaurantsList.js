@@ -9,3 +9,12 @@ export const getallrestaurants = async (req, res) => {
     res.json({ message: 'Error fetching restaurants', error: error.message });
   }
 };
+
+export const getrestaurantbyid = async (req,res)  => {
+  try{
+    const restaurant_detail = await RestaurantModel.findById(req.params.id);
+    res.json({ message:"Restaurant found", restaurant_detail});
+  }catch(error){
+    res.json({ message: 'Error fetching restaurant', error: error.message });
+  }
+}

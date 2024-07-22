@@ -12,13 +12,15 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { toast } from 'react-toastify';
 import api from '../api/axios'
+import { login } from '@/redux/userSlice'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux';
 
 
 export default function Login() {
   const navigate = useNavigate()
+  const dispatch = useDispatch();
   const backend_base_url = import.meta.env.VITE_BACKEND_BASE_URL 
-
   const[loginForm,setLoginForm] = useState({email:'',password:''})
 
   const handleChange = (e) =>{
@@ -31,10 +33,9 @@ export default function Login() {
     try{
       const response = await api.post(`${backend_base_url}/user/login`,loginForm)
       setLoginForm({email:'',password:''})
+      dispatch(login(response.data.user))
       navigate('/',{replace:true})
       toast.success("Successfully logged in!")
-      console.log("Response is ",response)
-      toast.success(`User details are: ${response}`)
 
     }catch(error){
       const error_message = error.response?.data?.message || 'Error logging you in'

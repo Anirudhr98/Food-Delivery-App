@@ -1,70 +1,96 @@
-import logo from '../../../../assets/logo.png';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
+import { FaShoppingCart, FaUserCircle } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
+
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
+import logo from '../../../../assets/logo.png';
 
 const Navbar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
+  const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
 
   return (
     <nav className="bg-gray-100 p-4 shadow-md">
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo and Website Name */}
-        <Link to='/'>
-        <div className="flex items-center space-x-2">
-          <img src={logo} alt="Logo" className="h-16 w-auto" />
-          <span className="text-xl font-semibold">AR7 Food Delivery</span>
-        </div>
-        </Link>
-
-        {/* Search Bar */}
-        <div className="flex-1 mx-4 ml-32 hidden md:flex">
-          <Input type="text" placeholder="Search..." className="w-full max-w-lg" />
-        </div>
-
-        {/* Signup Button */}
-        <Link to='/signup'>
-        <Button
-          className="bg-orange-400 text-white hover:bg-orange-500 hidden md:inline-block"
-        >
-          Sign Up
-        </Button>
-        </Link>
-
-        {/* Mobile Menu Toggle */}
-        <button
-          className="md:hidden flex items-center px-3 py-2 border rounded text-gray-500 border-gray-400 hover:text-gray-700 hover:border-gray-600"
-          onClick={toggleMobileMenu}
-        >
-          <svg className="fill-current h-6 w-6" viewBox="0 0 20 20">
-            <path d="M0 3h20v2H0V3zm0 5h20v2H0V8zm0 5h20v2H0v-2z" />
-          </svg>
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden block bg-gray-100 mt-2 p-4">
-          <div className="mb-4">
-            <Input type="text" placeholder="Search..." className="w-full" />
+        <Link to="/">
+          <div className="flex items-center space-x-2">
+            <img src={logo} alt="Logo" className="h-16 w-auto" />
+            <span className="text-xl font-semibold">AR7 Food Delivery</span>
           </div>
-        <Link to='/signup'>
-          <Button
-            className="bg-orange-300 text-white hover:bg-orange-400 w-full"
-          >
-            Sign Up
-          </Button>
+        </Link>
+
+        <div className="flex items-center space-x-4">
+          {/* Cart Icon */}
+          <Link to="/cart">
+            <FaShoppingCart className="text-gray-700 hover:text-gray-900 text-2xl" />
           </Link>
+
+          {/* Account Icon with Dropdown */}
+          <Menu as="div" className="relative ml-3">
+            <div>
+              <MenuButton className="flex items-center text-sm rounded-full focus:outline-none">
+                <FaUserCircle className="text-gray-700 hover:text-gray-900 text-2xl" />
+              </MenuButton>
+            </div>
+            <MenuItems
+              transition
+              className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
+            >
+              {isAuthenticated ? (
+                <>
+                  <MenuItem>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
+                      Your Profile
+                    </a>
+                  </MenuItem>
+                  <MenuItem>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
+                      Orders
+                    </a>
+                  </MenuItem>
+                  <MenuItem>
+                    <a href="/cart" className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
+                      Cart
+                    </a>
+                  </MenuItem>
+                  <MenuItem>
+                    <a href="/logout" className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
+                      Logout
+                    </a>
+                  </MenuItem>
+                  <MenuItem>
+                    <a href="/" className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
+                      Home
+                    </a>
+                  </MenuItem>
+                </>
+              ) : (
+                <>
+                  <MenuItem>
+                    <a href="/" className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
+                      Home
+                    </a>
+                  </MenuItem>
+                  <MenuItem>
+                    <a href="/login" className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
+                      Login
+                    </a>
+                  </MenuItem>
+                  <MenuItem>
+                    <a href="/signup" className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
+                      Signup
+                    </a>
+                  </MenuItem>
+                </>
+              )}
+            </MenuItems>
+          </Menu>
         </div>
-      )}
+      </div>
     </nav>
   );
 };
 
 export default Navbar;
+
+

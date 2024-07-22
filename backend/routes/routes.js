@@ -2,7 +2,7 @@ import express from 'express'
 import passport from 'passport'
 import { registerUser,loginUser,logoutUser } from '../controllers/UserController.js'
 // import { registerOwner,loginOwner,logoutOwner } from '../controllers/RestaurantOwnerController.js'
-import { getallrestaurants } from '../controllers/RestaurantsList.js'
+import { getallrestaurants, getrestaurantbyid } from '../controllers/RestaurantsList.js'
 // import{ seedingFunction } from '../controllers/seeding.js'
 
 const UserRouter = express.Router()
@@ -27,5 +27,6 @@ UserRouter.get('/auth/google/callback',
 // RestaurantOwnerRouter.get('/logout', logoutOwner);
 
 RestaurantsRouter.get('/',getallrestaurants)
+RestaurantsRouter.get('/:id',getrestaurantbyid)
 
 export {UserRouter,RestaurantOwnerRouter,RestaurantsRouter,SeedingRouter}
