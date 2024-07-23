@@ -1,3 +1,4 @@
+// import cloudinary from '../cloudinaryConfig.js';
 import models from '../models/models.js';
 const  {RestaurantModel} = models;
 
@@ -9,6 +10,7 @@ export const getallrestaurants = async (req, res) => {
     res.json({ message: 'Error fetching restaurants', error: error.message });
   }
 };
+
 
 export const getrestaurantbyid = async (req,res)  => {
   try{

@@ -44,7 +44,7 @@ export default function Home() {
             </div>
             <div className="font-medium text-2xl mt-8">Top Restaurants Near You</div>
             <div className="bg-white mt-8">
-                <div className="py-8">
+                <div className="pb-8">
                     <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
                         {restaurants.map((restaurant) => (
                             <div

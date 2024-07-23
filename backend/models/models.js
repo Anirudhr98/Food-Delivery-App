@@ -23,7 +23,7 @@ const restaurantSchema = new mongoose.Schema({
     restaurant_address: { type: String, required: true },
     cuisines_available: { type: Array, required: true },
     restaurant_image_url: { type: String, required: true },
-    discount_offered: { type: Number, default: 0 },
+    discount_offered: { type: Number, default: 50 },
     delivery_time: { type: Number, default:30},
     orders: [ordersSchema],
 });

@@ -2,7 +2,7 @@
   "_id": {
     "$oid": "668dbc57416c1a3ae91584f9"
   },
-  "restaurant_image_url": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+  "restaurant_image_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "restaurant_name": "The Fusion Kitchen",
   "delivery_time": 30,
   "discount_offered": 50,
@@ -96,10 +96,10 @@
   "_id": {
     "$oid": "668dbc57416c1a3ae91584fa"
   },
-  "restaurant_image_url": "https://images.unsplash.com/photo-1475090169767-40ed8d18f67d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80",
+  "restaurant_image_url": "https://images.unsplash.com/photo-1474898856510-884a2c0be546?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "restaurant_name": "Global Flavors",
   "delivery_time": 45,
-  "discount_offered": 10,
+  "discount_offered": 100,
   "is_veg": true,
   "cuisines_available": [
     "North Indian",
@@ -224,7 +224,7 @@
   "_id": {
     "$oid": "668dbc57416c1a3ae91584fb"
   },
-  "restaurant_image_url": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=999&q=80",
+  "restaurant_image_url": "https://images.unsplash.com/photo-1476055439777-977cdf3a5699?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "restaurant_name": "Sushi & Spice",
   "delivery_time": 60,
   "discount_offered": 70,
@@ -360,10 +360,10 @@
   "_id": {
     "$oid": "668dbc57416c1a3ae91584fc"
   },
-  "restaurant_image_url": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
+  "restaurant_image_url": "https://media.istockphoto.com/id/1306083166/photo/masala-sin.jpg?s=2048x2048&w=is&k=20&c=_DOQL2YtLE_Ml5Kv-X30De32iM7F46UIOJdDWYmxtRU=",
   "restaurant_name": "South Indian Spice",
   "delivery_time": 25,
-  "discount_offered": 25,
+  "discount_offered": 60,
   "is_veg": true,
   "cuisines_available": [
     "South Indian",
@@ -453,10 +453,10 @@
   "_id": {
     "$oid": "668dbc57416c1a3ae91584fd"
   },
-  "restaurant_image_url": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+  "restaurant_image_url": "https://media.istockphoto.com/id/1158626534/photo/kfc-store-at-ueno.jpg?s=2048x2048&w=is&k=20&c=xRbXl2WLqqjzzF_hk3qiiAcsshZcI-a1b20U4Y8ojyw=",
   "restaurant_name": "Fried Chicken Express",
   "delivery_time": 35,
-  "discount_offered": 14,
+  "discount_offered": 120,
   "is_veg": false,
   "cuisines_available": [
     "International",
@@ -578,10 +578,10 @@
   "_id": {
     "$oid": "668dbc57416c1a3ae91584fe"
   },
-  "restaurant_image_url": "https://images.unsplash.com/photo-1511909525232-61113c912358?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1112&q=80",
+  "restaurant_image_url": "https://media.istockphoto.com/id/936610098/photo/spaghetti-bolognese.jpg?s=2048x2048&w=is&k=20&c=Umc9ZmlLowLzLhiJxS7m3IrzbHbP8meyG28iIIWmEG0=",
   "restaurant_name": "Noodle and Spice",
   "delivery_time": 40,
-  "discount_offered": 0,
+  "discount_offered": 50,
   "is_veg": false,
   "cuisines_available": [
     "South Indian",
@@ -683,7 +683,7 @@
   "_id": {
     "$oid": "668dbc57416c1a3ae91584ff"
   },
-  "restaurant_image_url": "https://images.unsplash.com/photo-1513442542250-854d436a73f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=947&q=80",
+  "restaurant_image_url": "https://images.unsplash.com/photo-1658078367143-1a24488f1704?q=80&w=2013&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "restaurant_name": "BBQ Fusion",
   "delivery_time": 50,
   "discount_offered": 70,
@@ -831,10 +831,10 @@
   "_id": {
     "$oid": "668dbc57416c1a3ae9158500"
   },
-  "restaurant_image_url": "https://images.unsplash.com/photo-1528207776546-365bb710ee93?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+  "restaurant_image_url": "https://images.unsplash.com/photo-1716068107435-165b8067d96e?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "restaurant_name": "International Sandwiches",
   "delivery_time": 20,
-  "discount_offered": 0,
+  "discount_offered": 75,
   "is_veg": true,
   "cuisines_available": [
     "International",
@@ -906,10 +906,10 @@
   "_id": {
     "$oid": "668dbc57416c1a3ae9158501"
   },
-  "restaurant_image_url": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80",
+  "restaurant_image_url": "https://media.istockphoto.com/id/1024564130/photo/traditional-dumpling-momos-food-from-nepal-served-with-tomato-chutney-over-moody-background.jpg?s=2048x2048&w=is&k=20&c=aR6ouieXM9Lf_imVd1Ap5BYtP3UDSGX69WAxekgtiZA=",
   "restaurant_name": "Italian Tibetan Delights",
   "delivery_time": 30,
-  "discount_offered": 30,
+  "discount_offered": 120,
   "is_veg": false,
   "cuisines_available": [
     "Italian",
@@ -985,10 +985,10 @@
   "_id": {
     "$oid": "668dbc57416c1a3ae9158502"
   },
-  "restaurant_image_url": "https://images.unsplash.com/photo-1570696516188-ade861b84a49?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+  "restaurant_image_url": "https://images.unsplash.com/photo-1508424757105-b6d5ad9329d0?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "restaurant_name": "Smoothie & Chinese",
   "delivery_time": 15,
-  "discount_offered": 0,
+  "discount_offered": 100,
   "is_veg": true,
   "cuisines_available": [
     "North Indian",
