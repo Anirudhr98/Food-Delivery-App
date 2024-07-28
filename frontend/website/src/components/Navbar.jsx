@@ -11,10 +11,10 @@ const Navbar = () => {
   const addToCart = useSelector((state) => state.cart)
   const navigate = useNavigate()
 
-  // Helper function to calculate total price
-  const calculateTotalPrice = (items) => {
-    return items.reduce((total, item) => total + (item.item_price * item.quantity), 0);
-  };
+  // // Helper function to calculate total price
+  // const calculateTotalPrice = (items) => {
+  //   return items.reduce((total, item) => total + (item.item_price * item.quantity), 0);
+  // };
 
   const handleProceedToCheckoutfalse = () => {
     navigate('/login')
@@ -46,22 +46,7 @@ const Navbar = () => {
                 />
                 {addToCart.items && addToCart.items.length > 0 && (
                   <span
-                    style={{
-                      position: 'absolute',
-                      top: 30, // Adjust if needed
-                      right: 120, // Adjust if needed
-                      backgroundColor: 'orange',
-                      color: 'white',
-                      borderRadius: '50%',
-                      width: '20px',
-                      height: '20px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: '12px',
-                      fontWeight: 'bold',
-                    }}
-                    className="text-xs"
+                    className="absolute top-8 right-[80px] md:right-[80px] lg:right-[80px] xl:right-[120px] bg-orange-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold"
                   >
                     {addToCart.items.length}
                   </span>
@@ -98,7 +83,7 @@ const Navbar = () => {
                           </div>
                         ))}
                         <div className="mt-4">
-                          <p className="text-lg font-semibold">Total Price: Rs. {calculateTotalPrice(addToCart.items)}</p>
+                          <p className="text-lg font-semibold">Total Price: Rs. {addToCart.total_price}</p>
                         </div>
                         { isAuthenticated ? (
                           <>
