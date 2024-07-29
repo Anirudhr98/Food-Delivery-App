@@ -39,7 +39,7 @@ export default function Login() {
 
     }catch(error){
       const error_message = error.response?.data?.message || 'Error logging you in'
-      toast.error(`${error_message}`,{autoClose:3000})
+      toast.error(`${error_message}`,{autoClose:1500})
     }
   }
 

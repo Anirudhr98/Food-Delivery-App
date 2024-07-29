@@ -26,7 +26,7 @@ const Restaurant = () => {
         dispatch(setSelectedRestaurant(response.data.restaurant_detail));
       } catch (error) {
         const errorMessage = error.response?.data?.message || 'Error fetching data';
-        toast.error(errorMessage, { autoClose: 3000 });
+        toast.error(errorMessage, { autoClose: 1500 });
       }
     };
 
@@ -37,7 +37,7 @@ const Restaurant = () => {
 
   const handleAddToCart = (item) => {
     dispatch(addToCart(item));
-    toast.success(`${item.item_name} added to cart!`, { autoClose: 3000 });
+    toast.success(`${item.item_name} added to cart!`, { autoClose: 1500 });
   };
 
   if (!selectedRestaurant) {

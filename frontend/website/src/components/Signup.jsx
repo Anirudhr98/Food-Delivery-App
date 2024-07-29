@@ -31,10 +31,10 @@ export default function Signup() {
       await api.post(`${backend_base_url}/user/register`, signupform)
       setSignupForm({ name: '', email: '', password: '', confirm_password: '' })
       navigate('/', { replace: true });
-      toast.success('User registered successfully!', { autoClose: 3000 });
+      toast.success('User registered successfully!', { autoClose: 1500 });
     } catch (error) {
       const errorMessage = error.response?.data?.message || 'Error registering user';
-      toast.error(`${errorMessage}`, { autoClose: 3000 });
+      toast.error(`${errorMessage}`, { autoClose: 1500 });
 
     }
   }

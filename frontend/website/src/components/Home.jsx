@@ -19,7 +19,7 @@ export default function Home() {
                 setRestaurants(response.data.restaurants_list);
             } catch (error) {
                 const errorMessage = error.response?.data?.message || 'Error fetching data';
-                toast.error(errorMessage, { autoClose: 3000 });
+                toast.error(errorMessage, { autoClose: 1500 });
             }
         };
 
@@ -27,7 +27,7 @@ export default function Home() {
             fetchRestaurants();
         } else {
             const errorMessage = 'Error fetching data';
-            toast.error(errorMessage, { autoClose: 3000 });
+            toast.error(errorMessage, { autoClose: 1500 });
         }
     }, [backend_base_url]);
 
