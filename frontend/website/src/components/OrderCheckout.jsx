@@ -4,6 +4,7 @@ import { useSelector } from "react-redux"
 
 export default function OrderCheckout() {
     const cart = useSelector(state => state.cart.items)
+    const total_order_price = useSelector(state => state.cart.total_price)
     const user = useSelector(state => state.user.userDetails)
     const [isEditing, setIsEditing] = useState(false);
     const [newAddress, setNewAddress] = useState(user.address);
@@ -46,8 +47,7 @@ export default function OrderCheckout() {
                                             </tr>
                                         ))}
                                         <tr>
-                                            <td colSpan="3" className="py-2 px-4 border-b text-right font-bold">Total Price:</td>
-                                            <td className="py-2 px-4 border-b">Rs. </td>
+                                            <td className="py-2 px-4 border-b font-bold">Total Order Price : Rs. {total_order_price} </td>
                                         </tr>
                                     </tbody>
                                 </table>

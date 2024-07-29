@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import api from '../api/axios';
 import { Input } from '../components/ui/input';
 import { setSelectedRestaurant } from '../redux/restaurantSlice';
-import { addToCart } from '../redux/cartSlice'; // Import addToCart action
+import { addToCart } from '../redux/cartSlice'; 
 import { CiDiscount1, CiDeliveryTruck } from "react-icons/ci";
 
 const Restaurant = () => {
