@@ -12,11 +12,25 @@ const Restaurant = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const [isExpanded, setIsExpanded] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filteredItems, setFilteredItems] = useState([]);
   const selectedRestaurant = useSelector((state) => state.restaurant.selectedRestaurant);
 
   const handleDescriptionToggle = () => {
     setIsExpanded(!isExpanded);
-  }
+  };
+
+  const handleSearchChange = (event) => {
+    const query = event.target.value.toLowerCase();
+    setSearchQuery(query);
+    if (selectedRestaurant && selectedRestaurant.restaurant_items) {
+      const filtered = selectedRestaurant.restaurant_items.filter(item =>
+        item.item_name.toLowerCase().includes(query) ||
+        item.cuisine_type.toLowerCase().includes(query)
+      );
+      setFilteredItems(filtered);
+    }
+  };
 
   useEffect(() => {
     const fetchRestaurant = async () => {
@@ -32,8 +46,22 @@ const Restaurant = () => {
 
     if (!selectedRestaurant || selectedRestaurant._id !== id) {
       fetchRestaurant();
+    } else {
+      // Initialize filteredItems when selectedRestaurant is available
+      setFilteredItems(selectedRestaurant.restaurant_items);
     }
   }, [id, selectedRestaurant, dispatch]);
+
+  // Update filteredItems when searchQuery changes
+  useEffect(() => {
+    if (selectedRestaurant && selectedRestaurant.restaurant_items) {
+      const filtered = selectedRestaurant.restaurant_items.filter(item =>
+        item.item_name.toLowerCase().includes(searchQuery) ||
+        item.cuisine_type.some(cuisine => cuisine.toLowerCase().includes(searchQuery))
+      );
+      setFilteredItems(filtered);
+    }
+  }, [searchQuery, selectedRestaurant]);
 
   const handleAddToCart = (item) => {
     dispatch(addToCart(item));
@@ -75,59 +103,68 @@ const Restaurant = () => {
       </div>
 
       {/* Search Bar */}
-      <div className="mt-8">
-        <Input type="text" placeholder="Search Dishes.." />
+      <div className="mt-8 relative">
+        <Input
+          type="text"
+          placeholder="Search Dishes, Cuisines .."
+          value={searchQuery}
+          onChange={handleSearchChange}
+        />
       </div>
 
       <div className="container py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {selectedRestaurant.restaurant_items && selectedRestaurant.restaurant_items.map((restaurant_item) => (
-            <div
-              key={restaurant_item._id}
-              className="group relative bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transition duration-300 transform hover:scale-105"
-            >
-              {/* Image Container */}
-              <div className="w-full h-64 overflow-hidden bg-gray-200 group-hover:opacity-75">
-                <img
-                  src={restaurant_item.item_image_url}
-                  alt={restaurant_item.item_name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              {/* Content */}
-              <div className="p-4">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                  {restaurant_item.item_name}
-                </h3>
-                <p className="text-sm text-gray-900 font-semibold">Cuisine Type: {restaurant_item.cuisine_type}</p>
-                <p
-                  className={`text-sm text-gray-600 mb-4 mt-4 ${isExpanded ? '' : 'line-clamp-3'}`}
-                  onClick={handleDescriptionToggle}
-                  style={{ cursor: 'pointer' }}
-                >
-                  {restaurant_item.item_description}
-                </p>
-                <div className="flex justify-between items-center">
-                  <p className="text-lg text-gray-900 font-bold">Rs. {restaurant_item.item_price.toFixed(2)}</p>
-                  {restaurant_item.is_veg ? (
-                    <div className="flex items-center">
-                      <p className="text-sm text-green-500 font-semibold">Vegetarian</p>
-                    </div>
-                  ) : (
-                    <div className="flex items-center">
-                      <p className="text-sm text-red-500 font-semibold">Non-vegetarian</p>
-                    </div>
-                  )}
+          {filteredItems.length > 0 ? (
+            filteredItems.map((restaurant_item) => (
+              <div
+                key={restaurant_item._id}
+                className="group relative bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transition duration-300 transform hover:scale-105"
+              >
+                {/* Image Container */}
+                <div className="w-full h-64 overflow-hidden bg-gray-200 group-hover:opacity-75">
+                  <img
+                    src={restaurant_item.item_image_url}
+                    alt={restaurant_item.item_name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <button
-                  onClick={() => handleAddToCart(restaurant_item)}
-                  className="mt-2 px-4 py-2 bg-orange-400 text-white rounded-lg hover:bg-orange-600"
-                >
-                  Add to Cart
-                </button>
+                {/* Content */}
+                <div className="p-4">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                    {restaurant_item.item_name}
+                  </h3>
+                  <p className="text-sm text-gray-900 font-semibold">Cuisine Type: {restaurant_item.cuisine_type}</p>
+                  <p
+                    className={`text-sm text-gray-600 mb-4 mt-4 ${isExpanded ? '' : 'line-clamp-3'}`}
+                    onClick={handleDescriptionToggle}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    {restaurant_item.item_description}
+                  </p>
+                  <div className="flex justify-between items-center">
+                    <p className="text-lg text-gray-900 font-bold">Rs. {restaurant_item.item_price.toFixed(2)}</p>
+                    {restaurant_item.is_veg ? (
+                      <div className="flex items-center">
+                        <p className="text-sm text-green-500 font-semibold">Vegetarian</p>
+                      </div>
+                    ) : (
+                      <div className="flex items-center">
+                        <p className="text-sm text-red-500 font-semibold">Non-vegetarian</p>
+                      </div>
+                    )}
+                  </div>
+                  <button
+                    onClick={() => handleAddToCart(restaurant_item)}
+                    className="mt-2 px-4 py-2 bg-orange-400 text-white rounded-lg hover:bg-orange-600"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <p>No items match your search criteria.</p>
+          )}
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@ import 'dotenv/config';
 const { UserModel } = models;
 
 
-// User Model
+// Manual User Registration
 passport.use(new LocalStrategy({
   usernameField: 'email',
   passwordField: 'password',
@@ -27,11 +27,11 @@ passport.use(new LocalStrategy({
   }
 }));
 
-
+// Registration Using Google Account
 passport.use(new GoogleStrategy({
     clientID: process.env.GoogleClientID,
     clientSecret: process.env.GoogleClientSecret,
-    callbackURL: '${process.env.BACKEND_BASE_URL}/user/auth/google/callback'
+    callbackURL: `${process.env.BACKEND_BASE_URL}/user/auth/google/callback`
   },
   async (accessToken, refreshToken, profile, done) => {
     try {
@@ -56,7 +56,7 @@ passport.serializeUser((user, done) => {
   done(null, user._id);
 });
 
-passport.deserializeUser(async (id, done) => {
+passport.deserializeUser(async (_id, done) => {
   try {
     const user = await UserModel.findById(_id).select('-password');;
     done(null, user);

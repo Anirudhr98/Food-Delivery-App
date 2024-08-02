@@ -28,6 +28,7 @@ export default function Login() {
     setLoginForm({...loginForm,[id]:value})
   }
 
+
   const handleSubmit = async(e) => {
     e.preventDefault();
     try{
@@ -36,7 +37,6 @@ export default function Login() {
       dispatch(login(response.data.user))
       navigate('/',{replace:true})
       toast.success("Successfully logged in!")
-
     }catch(error){
       const error_message = error.response?.data?.message || 'Error logging you in'
       toast.error(`${error_message}`,{autoClose:1500})
@@ -80,11 +80,11 @@ export default function Login() {
             Login
           </Button>
         </form>
-        <Link to = {`${backend_base_url}/user/auth/google`}>
+        <Link to={`${backend_base_url}/user/auth/google`}>
           <Button variant="outline" className="w-full mt-4">
             Login with Google
           </Button>
-          </Link>
+        </Link>
         <div className="mt-4 text-center text-sm">
           Don&apos;t have an account?{" "}
           <Link to="/signup" className="underline">

@@ -3,6 +3,7 @@ import api from '../api/axios';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { Input } from './ui/input';
+import { login } from '@/redux/userSlice'
 import { useDispatch } from 'react-redux';
 import { setSelectedRestaurant } from '../redux/restaurantSlice';
 
@@ -31,9 +32,32 @@ export default function Home() {
         }
     }, [backend_base_url]);
 
+    useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get('token');
+        if (token) {
+            getuserdetailsbyid(token)
+        }
+    }, []);
+
+
+
+    const getuserdetailsbyid = async (token) => {
+        try {
+            const response = await api.get(`${backend_base_url}/user/getUserDetailsById?userId=${token}`);
+            dispatch(login(response.data.user_details))
+            navigate('/', { replace: true })
+            toast.success("Successfully logged in!")
+
+        } catch (error) {
+            const error_message = error.response?.data?.message || 'Error logging you in'
+            toast.error(`${error_message}`, { autoClose: 1500 })
+        }
+    }
+
     const handleRestaurantClick = (restaurant) => {
-        dispatch(setSelectedRestaurant(restaurant));  // Dispatch the action to set selected restaurant
-        navigate(`/restaurant/${restaurant._id}`);    // Navigate to the restaurant detail page
+        dispatch(setSelectedRestaurant(restaurant));
+        navigate(`/restaurant/${restaurant._id}`);
     };
 
     return (

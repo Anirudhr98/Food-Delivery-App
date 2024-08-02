@@ -152,6 +152,11 @@ return (
               {isAuthenticated ? (
                 <>
                   <MenuItem>
+                    <Link to="/" className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
+                      Home
+                    </Link>
+                  </MenuItem>
+                  <MenuItem>
                     <Link to="/profile" className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
                       Your Profile
                     </Link>
@@ -165,11 +170,6 @@ return (
                     <MenuButton onClick={handleLogout} className="group text-sm text-gray-700 flex w-full items-center -2 px-4 py-2 data-[focus]:bg-gray-100">
                       Logout
                     </MenuButton>
-                  </MenuItem>
-                  <MenuItem>
-                    <Link to="/" className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
-                      Home
-                    </Link>
                   </MenuItem>
                 </>
               ) : (

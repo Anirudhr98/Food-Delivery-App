@@ -1,55 +1,126 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
-// import { updateUserAddress } from '../redux/actions'; // Adjust the path based on your project structure
+import { useSelector, useDispatch } from 'react-redux';
+import api from '@/api/axios';
+import { toast } from 'react-toastify';
+import { login } from '@/redux/userSlice';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 
 export default function Profile() {
+  const dispatch = useDispatch();
   const userDetails = useSelector((state) => state.user.userDetails);
+  const backend_base_url = import.meta.env.VITE_BACKEND_BASE_URL;
 
-  const [isEditing, setIsEditing] = useState(false);
+  const [editMode, setEditMode] = useState(false);
+  const [originalValues, setOriginalValues] = useState({
+    name: userDetails.name || '',
+    address: userDetails.address || '',
+    _id: userDetails._id,
+  });
+  const [formValues, setFormValues] = useState(originalValues);
 
-  const handleSaveAddress = () => {
-    // dispatch(updateUserAddress(address)); // Make sure to define this action in your Redux actions
-    setIsEditing(false);
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues((prevValues) => ({
+      ...prevValues,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async () => {
+    try {
+      const response = await api.put(`${backend_base_url}/user/updateUserDetails`, formValues);
+      dispatch(login(response.data.updatedUserDetails ));
+      toast.success('Updated Details successfully!', { autoClose: 1500 });
+      setEditMode(false);
+    } catch (error) {
+      toast.error('Failed to update details. Please try again.', { autoClose: 1500 });
+    }
+  };
+
+  const handleCancel = () => {
+    setFormValues(originalValues);
+    setEditMode(false);
   };
 
   return (
-    <div className="p-8">
-      <div className="font-medium text-2xl mt-8">User Profile</div>
-      <div className="mb-4 mt-8">
-        <strong>Name:</strong> {userDetails.name}
-      </div>
-      <div className="mb-4">
-        <strong>Email:</strong> {userDetails.email}
-      </div>
-      <div className="mb-4">
-        <strong>Address:</strong>
-        {isEditing ? (
-          <>
-            <input
-              type="text"
-              value={userDetails.address}
-            //   onChange={handleAddressChange}
-              className="border p-2 rounded ml-2"
+    <Card className="w-3/6 mx-auto mt-10">
+      <CardHeader>
+        <CardTitle className="text-2xl">Profile Details</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <div className="mb-4">
+          <strong className="block mb-2">Name:</strong>
+          <div className="flex items-center">
+            {editMode ? (
+              <input
+                type="text"
+                name="name"
+                value={formValues.name}
+                onChange={handleInputChange}
+                className="block p-2 border border-gray-300 rounded bg-gray-50 flex-grow"
+                style={{ flexBasis: '90%' }}
+              />
+            ) : (
+              <span
+                className="block p-2 border border-gray-300 rounded bg-gray-50 flex-grow"
+                style={{ flexBasis: '90%' }}
+              >
+                {userDetails.name}
+              </span>
+            )}
+          </div>
+        </div>
+        <div className="mb-4">
+          <strong className="block mb-2">Email:</strong>
+          <div className="flex items-center">
+            <span
+              className="block p-2 border border-gray-300 rounded bg-gray-50 flex-grow"
+              style={{ flexBasis: '90%' }}
+            >
+              {userDetails.email}
+            </span>
+          </div>
+        </div>
+        <div className="mb-4">
+          <strong className="block mb-2">Address:</strong>
+          <div className="flex items-start">
+            <textarea
+              rows={4}
+              name="address"
+              value={formValues.address}
+              onChange={handleInputChange}
+              className="w-full p-2 border border-gray-300 rounded flex-grow"
+              style={{ flexBasis: '90%' }}
+              disabled={!editMode}
             />
+          </div>
+        </div>
+        <div className="flex justify-end">
+          {editMode ? (
+            <>
+              <button
+                onClick={handleSubmit}
+                className="ml-2 p-2 bg-orange-400 hover:bg-orange-500 text-white rounded"
+              >
+                Save
+              </button>
+              <button
+                onClick={handleCancel}
+                className="ml-2 p-2 bg-gray-400 hover:bg-gray-500 text-white rounded"
+              >
+                Cancel
+              </button>
+            </>
+          ) : (
             <button
-              onClick={handleSaveAddress}
-              className="bg-blue-500 text-white hover:bg-blue-600 font-bold py-1 px-4 rounded ml-2"
+              onClick={() => setEditMode(true)}
+              className="ml-2 p-2 bg-orange-400 hover:bg-orange-500 text-white rounded"
             >
-              Save
+              Edit Profile Details
             </button>
-          </>
-        ) : (
-          <>
-            <span className="ml-2">{userDetails.address}</span>
-            <button
-              onClick={() => setIsEditing(true)}
-              className="bg-green-500 text-white hover:bg-green-600 font-bold py-1 px-4 rounded ml-2"
-            >
-              Edit
-            </button>
-          </>
-        )}
-      </div>
-    </div>
+          )}
+        </div>
+      </CardContent>
+    </Card>
   );
 }

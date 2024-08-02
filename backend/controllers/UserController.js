@@ -1,6 +1,8 @@
 import bcrypt from 'bcryptjs';
 import passport from 'passport';
 import models from '../models/models.js';
+import mongoose from 'mongoose';
+
 const {UserModel}  = models
 
 
@@ -53,3 +55,33 @@ export const logoutUser = (req, res, next) => {
   });
 };
 
+export const getUserDetailsById = async (req, res) => {
+  const { userId } = req.query; // Get the user_id from the query parameters
+  try {
+    const user_details = await UserModel.findById(userId, '-password');
+    if (!user_details) {
+      return res.json({ message: 'User not found' });
+    }
+    res.json({ message: "User Details Found", user_details });
+  } catch (err) {
+    res.status(500).json({ message: 'Error finding user', error: err.message });
+  }
+};
+
+
+export const updateUserDetails = async (req, res) => {
+  const { name, address, _id } = req.body;
+  try {
+    const response = await UserModel.updateOne({ _id: _id }, { $set: { name: name, address: address } });
+    
+    if (response.nModified === 0) {
+      return res.status(404).json({ message: 'User not found or no changes made' });
+    }
+
+    const updatedUserDetails = await UserModel.findById(_id);
+    res.status(200).json({"updatedUserDetails":updatedUserDetails});
+  } catch (error) {
+    console.error('Error updating user details:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+};

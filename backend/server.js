@@ -12,7 +12,7 @@ const app = express();
 const port = 4000;
 
 // Redis client setup
-const  redisClient = createClient({
+const redisClient = createClient({
   socket: {
     host: 'redis-10766.c264.ap-south-1-1.ec2.redns.redis-cloud.com',
     port: 10766,
@@ -47,7 +47,10 @@ mongoose.connect(process.env.MONGODB_URI, { dbName: 'AR7FoodDelivery' })
   });
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:5173', // Allow requests from your frontend's origin
+  credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+}));
 app.use(sessionMiddleware);
 
 // Passport middleware
@@ -63,3 +66,5 @@ app.use('/user', UserRouter);
 app.use('/restaurants', RestaurantsRouter);
 
 app.listen(port, () => console.log(`Listening on port localhost:${port}`));
+
+export {redisClient}

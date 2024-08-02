@@ -3,8 +3,11 @@ import mongoose from 'mongoose'
 const ordersSchema = new mongoose.Schema({
     order_items: { type: Array, required: true },
     order_total_price: { type: Number, required: true },
-    order_status: { type: String, required: true }
+    order_status: { type: String, required: true },
+    user_id : {type:mongoose.Schema.Types.ObjectId,ref:'User'},
+    restaurant_id : {type:mongoose.Schema.Types.ObjectId,ref:'Restaurant'}
 });
+
 
 const restaurantitemsSchema = new mongoose.Schema({
     item_name: { type: String, required: true },
