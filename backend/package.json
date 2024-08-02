@@ -14,9 +14,7 @@
     "redis": "^4.6.15"
   },
   "scripts": {
-    "server": "nodemon server.js",
-     "start": "node server.js",
-     "build": "echo \"This is a dummy build script.\""
+    "server": "nodemon server.js"
   },
   "type": "module"
 }
