@@ -48,7 +48,7 @@ mongoose.connect(process.env.MONGODB_URI, { dbName: 'AR7FoodDelivery' })
 
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:5173', // Allow requests from your frontend's origin
+  origin: ['http://localhost:5173','https://ar7-food-delivery-app-backend.onrender.com'], // Allow requests from your frontend's origin
   credentials: true, // Allow credentials (cookies, authorization headers, etc.)
 }));
 app.use(sessionMiddleware);
