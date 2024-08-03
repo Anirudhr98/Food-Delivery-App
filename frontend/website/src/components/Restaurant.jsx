@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import api from '../api/axios';
+import ScrollToTopButton from './ScrollToTopButton';
 import { Input } from '../components/ui/input';
 import { setSelectedRestaurant } from '../redux/restaurantSlice';
 import { addToCart } from '../redux/cartSlice'; 
@@ -167,6 +168,7 @@ const Restaurant = () => {
           )}
         </div>
       </div>
+      <ScrollToTopButton/>
     </div>
   );
 };

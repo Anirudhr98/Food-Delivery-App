@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import api from '../api/axios';
+import ScrollToTopButton from './ScrollToTopButton';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { Input } from './ui/input';
@@ -97,6 +98,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
+            <ScrollToTopButton/>
         </div>
     );
 }
