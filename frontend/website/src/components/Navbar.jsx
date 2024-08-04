@@ -85,9 +85,11 @@ return (
                   <p className='text-xl font-semibold'>Items In Cart:</p>
                   {cart.items.length > 0 ? (
                     <>
+                     <p className='mt-2 font-semibold'>Restaurant : {cart.items[0].restaurant_name}</p>
                       {cart.items.map((item, index) => (
                         <div key={index} className="mb-2 flex items-center justify-between mt-8">
                           <div>
+                           
                             <p>Name: {item.item_name}</p>
                             <p>Price: Rs. {item.item_price}</p>
                           </div>
@@ -109,7 +111,7 @@ return (
                         </div>
                       ))}
                       <div className="mt-4">
-                        <p className="text-lg font-semibold">Total Price: Rs. {cart.total_price}</p>
+                        {/* <p className="text-lg font-semibold">Total Price: Rs. {cart.total_price}</p> */}
                       </div>
                       {isAuthenticated ? (
                         <>

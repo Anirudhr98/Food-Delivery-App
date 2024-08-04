@@ -6,7 +6,7 @@ import api from '../api/axios';
 import ScrollToTopButton from './ScrollToTopButton';
 import { Input } from '../components/ui/input';
 import { setSelectedRestaurant } from '../redux/restaurantSlice';
-import { addToCart } from '../redux/cartSlice'; 
+import { addToCart, clearCart } from '../redux/cartSlice'; 
 import { CiDiscount1, CiDeliveryTruck } from "react-icons/ci";
 
 const Restaurant = () => {
@@ -16,6 +16,7 @@ const Restaurant = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredItems, setFilteredItems] = useState([]);
   const selectedRestaurant = useSelector((state) => state.restaurant.selectedRestaurant);
+  const cartItems = useSelector((state) => state.cart.items);
 
   const handleDescriptionToggle = () => {
     setIsExpanded(!isExpanded);
@@ -65,7 +66,52 @@ const Restaurant = () => {
   }, [searchQuery, selectedRestaurant]);
 
   const handleAddToCart = (item) => {
-    dispatch(addToCart(item));
+    const currentRestaurant = cartItems.length > 0 ? cartItems[0].restaurant_id : null;
+
+    if (currentRestaurant && currentRestaurant !== selectedRestaurant._id) {
+      toast.warn(
+        <div>
+          <div className='font-bold'>
+          Items from another restaurant are present in the cart.
+          <br />
+          Do you want to clear the cart and add items from the new restaurant?
+          </div>
+          <br />
+          <button
+            onClick={() => {
+              dispatch(clearCart());
+              addItemToCart(item);
+              toast.dismiss();
+            }}
+            className="px-4 py-2 bg-orange-400 text-white rounded-lg hover:bg-orange-600"
+          >
+            Yes
+          </button> 
+          <button
+            onClick={() => toast.dismiss()}
+            className="mt-2 ml-2 px-4 py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-600"
+          >
+            No
+          </button>
+        </div>,
+        {
+          autoClose: false,
+          closeOnClick: false,
+        }
+      );
+    } else {
+      addItemToCart(item);
+    }
+  };
+
+  const addItemToCart = (item) => {
+    const itemWithRestaurantDetails = {
+      ...item,
+      restaurant_id: selectedRestaurant._id,
+      restaurant_name: selectedRestaurant.restaurant_name,
+      discount_offered: selectedRestaurant.discount_offered
+    };
+    dispatch(addToCart(itemWithRestaurantDetails));
     toast.success(`${item.item_name} added to cart!`, { autoClose: 1500 });
   };
 

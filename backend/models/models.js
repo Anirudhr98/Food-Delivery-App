@@ -5,7 +5,9 @@ const ordersSchema = new mongoose.Schema({
     order_total_price: { type: Number, required: true },
     order_status: { type: String, required: true },
     user_id : {type:mongoose.Schema.Types.ObjectId,ref:'User'},
-    restaurant_id : {type:mongoose.Schema.Types.ObjectId,ref:'Restaurant'}
+    restaurant_id : {type:mongoose.Schema.Types.ObjectId,ref:'Restaurant'},
+    created_at : {type:mongoose.Schema.Types.Date},
+    delivered_at : {type:mongoose.Schema.Types.Date}
 });
 
 

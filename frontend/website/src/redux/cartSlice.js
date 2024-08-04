@@ -2,8 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   items: [],
+  discount_offered: 0,
+  all_item_prices :0,
   total_price: 0,
   address: null,
+  delivery_charges:0,
 };
 
 const cartSlice = createSlice({
@@ -22,7 +25,10 @@ const cartSlice = createSlice({
       if (action.payload.address) {
         state.address = action.payload.address;
       }
-      state.total_price = state.items.reduce((total, item) => total + (item.item_price * item.quantity), 0);
+      state.delivery_charges = 50
+      state.discount_offered = action.payload.discount_offered;
+      state.all_item_prices = state.items.reduce((total, item) => total + (item.item_price * item.quantity), 0);
+      state.total_price = state.items.reduce((total, item) => total + (item.item_price * item.quantity) - state.discount_offered + state.delivery_charges, 0);
     },
     clearCart: (state) => {
       state.items = [];
