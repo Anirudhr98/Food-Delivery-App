@@ -4,7 +4,7 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import RedisStore from 'connect-redis';
 import passport from './config/passportConfig.js';
-import { UserRouter, RestaurantsRouter } from './routes/routes.js';
+import { UserRouter, RestaurantsRouter,OrdersRouter } from './routes/routes.js';
 import { createClient } from 'redis';
 import 'dotenv/config';
 
@@ -47,10 +47,6 @@ mongoose.connect(process.env.MONGODB_URI, { dbName: 'AR7FoodDelivery' })
   });
 
 app.use(express.json());
-// app.use(cors({
-//   origin: ['https://ar7-food-delivery-app-backend.onrender.com'], // Allow requests from your frontend's origin
-//   credentials: true, // Allow credentials (cookies, authorization headers, etc.)
-// }));
 app.use(cors());
 app.use(sessionMiddleware);
 
@@ -65,7 +61,7 @@ app.get('/', (req, res) => {
 app.use('/user', UserRouter);
 // app.use('/restaurant-owner',RestaurantOwnerRouter);
 app.use('/restaurants', RestaurantsRouter);
-
+app.use('/orders',OrdersRouter)
 app.listen(port, () => console.log(`Listening on port localhost:${port}`));
 
 export {redisClient}

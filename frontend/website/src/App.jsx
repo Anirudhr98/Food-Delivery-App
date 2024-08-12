@@ -6,6 +6,7 @@ import Home from './components/Home'
 import Profile from './components/Profile'
 import OrderCheckout from './components/OrderCheckout'
 import Restaurant from './components/Restaurant'
+import Orders from './components/Orders'
 import Footer from './components/Footer'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -21,7 +22,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/order_checkout" element={<OrderCheckout />} />
-          <Route path='profile' element={<Profile />} />
+          <Route path="/orders" element={<Orders />} />
+          <Route path='/profile' element={<Profile />} />
           <Route path="/restaurant/:id" element={<Restaurant />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

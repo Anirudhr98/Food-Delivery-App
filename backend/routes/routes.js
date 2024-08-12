@@ -5,12 +5,14 @@ import { redisClient } from '../server.js';
 import { registerUser, loginUser, logoutUser,getUserDetailsById,updateUserDetails } from '../controllers/UserController.js'
 // import { registerOwner,loginOwner,logoutOwner } from '../controllers/RestaurantOwnerController.js'
 import { getallrestaurants, getrestaurantbyid } from '../controllers/RestaurantsList.js'
+import { createorder,getOrders } from '../controllers/OrderController.js';
 // import{ seedingFunction } from '../controllers/seeding.js'
 
 const UserRouter = express.Router()
 const RestaurantOwnerRouter = express.Router()
 const RestaurantsRouter = express.Router()
 const SeedingRouter = express.Router()
+const OrdersRouter = express.Router()
 
 
 UserRouter.post('/register', registerUser)
@@ -37,4 +39,8 @@ UserRouter.get('/auth/google/callback',
 RestaurantsRouter.get('/', getallrestaurants)
 RestaurantsRouter.get('/:id', getrestaurantbyid)
 
-export { UserRouter, RestaurantOwnerRouter, RestaurantsRouter, SeedingRouter }
+OrdersRouter.post('/create_order',createorder)
+OrdersRouter.post('/get_orders',getOrders)
+
+
+export { UserRouter, RestaurantOwnerRouter, RestaurantsRouter, SeedingRouter,OrdersRouter }

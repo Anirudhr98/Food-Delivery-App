@@ -2,12 +2,16 @@ import mongoose from 'mongoose'
 
 const ordersSchema = new mongoose.Schema({
     order_items: { type: Array, required: true },
+    all_item_prices: { type: Number, required: true },
+    discount_offered: { type: Number, required: true },
+    delivery_charges: { type: Number, required: true },
     order_total_price: { type: Number, required: true },
     order_status: { type: String, required: true },
-    user_id : {type:mongoose.Schema.Types.ObjectId,ref:'User'},
-    restaurant_id : {type:mongoose.Schema.Types.ObjectId,ref:'Restaurant'},
-    created_at : {type:mongoose.Schema.Types.Date},
-    delivered_at : {type:mongoose.Schema.Types.Date}
+    user_id: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+    delivery_address: { type: String, required: true },
+    restaurant_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Restaurant', required: true },
+    created_at: { type: Date, required: true },
+    delivered_at: { type: Date }
 });
 
 
@@ -57,7 +61,7 @@ const userSchema = new mongoose.Schema({
 
 
 const UserModel = mongoose.model("User", userSchema);
-// const RestaurantOwnerModel = mongoose.model("RestaurantOwner", restaurantownerSchema);
+//const RestaurantOwnerModel = mongoose.model("RestaurantOwner", restaurantownerSchema);
 const RestaurantModel = mongoose.model("Restaurant", restaurantSchema);
 const RestaurantItemModel = mongoose.model('RestaurantItem', restaurantitemsSchema);
 const OrdersModel = mongoose.model('Orders', ordersSchema);

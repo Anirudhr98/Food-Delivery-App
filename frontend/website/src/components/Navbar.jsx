@@ -164,7 +164,7 @@ return (
                     </Link>
                   </MenuItem>
                   <MenuItem>
-                    <Link to="#" className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
+                    <Link to="/orders" className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
                       Orders
                     </Link>
                   </MenuItem>

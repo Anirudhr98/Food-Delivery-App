@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import api from '@/api/axios';
+import api from '../api/axios';
 import { toast } from 'react-toastify';
 import { login } from '@/redux/userSlice';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
