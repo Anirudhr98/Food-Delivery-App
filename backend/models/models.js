@@ -10,6 +10,7 @@ const ordersSchema = new mongoose.Schema({
     user_id: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
     delivery_address: { type: String, required: true },
     restaurant_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Restaurant', required: true },
+    restaurant_name : {type:String,required:true},
     created_at: { type: Date, required: true },
     delivered_at: { type: Date }
 });

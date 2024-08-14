@@ -45,10 +45,11 @@ export default function OrderCheckout() {
           discount_offered: cart.discount_offered,
           delivery_charges: cart.delivery_charges,
           order_total_price: cart.total_price,
-          order_status: "Order Accepted",
+          order_status: "Accepted",
           user_id: user._id,
           delivery_address: cart.address || user.address, 
           restaurant_id: restaurant._id,
+          restaurant_name : restaurant.restaurant_name,
           created_at: new Date().toISOString(),
           delivered_at: null 
       };
@@ -63,13 +64,12 @@ export default function OrderCheckout() {
   }
   };
 
-  
-
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-8">
       <div className="font-medium text-2xl underline">
         Order Checkout Details
       </div>
+      <div className="font-medium text-2xl mt-8">Order Checkout Details</div>
       {cart_items && user ? (
         <>
           <div className="mb-6 mt-8">
