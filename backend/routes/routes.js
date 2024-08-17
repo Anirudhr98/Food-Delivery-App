@@ -4,7 +4,7 @@ import passport from 'passport'
 import { redisClient } from '../server.js';
 import { registerUser, loginUser, logoutUser,getUserDetailsById,updateUserDetails } from '../controllers/UserController.js'
 // import { registerOwner,loginOwner,logoutOwner } from '../controllers/RestaurantOwnerController.js'
-import { getallrestaurants, getrestaurantbyid } from '../controllers/RestaurantsList.js'
+import { getallrestaurants, getrestaurantbyid,create_new_restaurant } from '../controllers/RestaurantsList.js'
 import { createorder,getOrders } from '../controllers/OrderController.js';
 // import{ seedingFunction } from '../controllers/seeding.js'
 
@@ -38,6 +38,7 @@ UserRouter.get('/auth/google/callback',
 
 RestaurantsRouter.get('/', getallrestaurants)
 RestaurantsRouter.get('/:id', getrestaurantbyid)
+RestaurantsRouter.post('create_new_restaurant',create_new_restaurant)
 
 OrdersRouter.post('/create_order',createorder)
 OrdersRouter.post('/get_orders',getOrders)

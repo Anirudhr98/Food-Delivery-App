@@ -8,6 +8,7 @@ import OrderCheckout from './components/OrderCheckout'
 import Restaurant from './components/Restaurant'
 import Orders from './components/Orders'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -16,6 +17,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

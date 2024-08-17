@@ -11,7 +11,7 @@ export default function Profile() {
   const backend_base_url = import.meta.env.VITE_BACKEND_BASE_URL;
 
   const [editMode, setEditMode] = useState(false);
-  const [originalValues, setOriginalValues] = useState({
+  const [originalValues] = useState({
     name: userDetails.name || '',
     address: userDetails.address || '',
     _id: userDetails._id,
@@ -41,6 +41,7 @@ export default function Profile() {
     setFormValues(originalValues);
     setEditMode(false);
   };
+
 
   return (
     <Card className="w-3/6 mx-auto mt-10">
