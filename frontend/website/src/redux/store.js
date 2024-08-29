@@ -1,10 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage'; // default storage is localStorage
+import storage from 'redux-persist/lib/storage'; // Default storage is localStorage
 import { combineReducers } from 'redux';
 import userReducer from './userSlice';
-import restaurantReducer from './restaurantSlice';
+import restaurantReducer from '../redux/restaurantSlice';
 import cartReducer from '../redux/cartSlice';
+import restaurantManagementReducer from '../redux/restaurantManagementSlice'; // Import the reducer, not the slice
 
 // Define the persist config
 const persistConfig = {
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   user: userReducer,
   restaurant: restaurantReducer,
   cart: cartReducer,
+  restaurant_management: restaurantManagementReducer // Use the correct reducer
 });
 
 // Create a persisted reducer
@@ -28,7 +30,7 @@ const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredActions: ['persist/PERSIST'], // Ignore the persist actions
+        ignoredActions: ['persist/PERSIST'], // Ignore persist actions
       },
     }),
 });

@@ -1,24 +1,19 @@
 import bcrypt from 'bcryptjs';
 import passport from 'passport';
 import models from '../models/models.js';
-import mongoose from 'mongoose';
-
 const {UserModel}  = models
 
 
 export const registerUser = async (req, res) => {
   const { name, email, password, confirm_password } = req.body;
-  // Check if the password and confirm_password match
   if (password !== confirm_password) {
     return res.status(400).json({ message: 'Passwords do not match' });
   }
   try {
-    // Check if the email already exists
     const existingUser = await UserModel.findOne({ email });
     if (existingUser) {
       return res.status(400).json({ message: 'Email already exists' });
     }
-    // Hash the password
     const hashedPassword = await bcrypt.hash(password, 10);
     // Create a new user
     const newUser = new UserModel({

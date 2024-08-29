@@ -4,7 +4,7 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import RedisStore from 'connect-redis';
 import passport from './config/passportConfig.js';
-import { UserRouter, RestaurantsRouter,OrdersRouter } from './routes/routes.js';
+import { UserRouter, RestaurantsRouter,OrdersRouter,RestaurantOwnerRouter } from './routes/routes.js';
 import { createClient } from 'redis';
 import 'dotenv/config';
 
@@ -59,7 +59,7 @@ app.get('/', (req, res) => {
   res.send("Home Page Request");
 });
 app.use('/user', UserRouter);
-// app.use('/restaurant-owner',RestaurantOwnerRouter);
+app.use('/restaurant_owner',RestaurantOwnerRouter);
 app.use('/restaurants', RestaurantsRouter);
 app.use('/orders',OrdersRouter)
 app.listen(port, () => console.log(`Listening on port localhost:${port}`));

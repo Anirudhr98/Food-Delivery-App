@@ -18,7 +18,23 @@ export default function Home() {
         const fetchRestaurants = async () => {
             try {
                 const response = await api.get(`${backend_base_url}/restaurants`);
-                setRestaurants(response.data.restaurants_list);
+                const fetched_restaurants = response.data.restaurants_list
+                console.log("Fetched ", fetched_restaurants)
+                const requiredFields = [
+                 //   'restaurant_id',
+                    'restaurant_name',
+                    'restaurant_items',
+                    'restaurant_address',
+                    'cuisines_available',
+                    'restaurant_image_url',
+                    'discount_offered',
+                    'delivery_time'
+                ];
+                const filtered_restaurants = fetched_restaurants.filter(rest =>
+                    requiredFields.every(field => rest[field])
+                );
+                console.log("sfdssf",filtered_restaurants)
+                setRestaurants(filtered_restaurants);
             } catch (error) {
                 const errorMessage = error.response?.data?.message || 'Error fetching data';
                 toast.error(errorMessage, { autoClose: 1500 });
@@ -98,7 +114,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <ScrollToTopButton/>
+            <ScrollToTopButton />
         </div>
     );
 }

@@ -9,7 +9,7 @@ const restaurantSlice = createSlice({
     initialState,
     reducers: {
         setSelectedRestaurant: (state, action) => {
-            state.selectedRestaurant = action.payload;  // Ensure you only mutate the draft state
+            state.selectedRestaurant = action.payload; 
         },
         clearSelectedRestaurant: (state) =>{
             state.selectedRestaurant = null;

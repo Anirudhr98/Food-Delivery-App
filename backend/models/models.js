@@ -15,7 +15,6 @@ const ordersSchema = new mongoose.Schema({
     delivered_at: { type: Date }
 });
 
-
 const restaurantitemsSchema = new mongoose.Schema({
     item_name: { type: String, required: true },
     item_image_url: { type: String, required: true },
@@ -28,22 +27,17 @@ const restaurantitemsSchema = new mongoose.Schema({
 });
 
 const restaurantSchema = new mongoose.Schema({
+    restaurant_id : {type:String, required:true},
     restaurant_name: { type: String, required: true },
     restaurant_items: [restaurantitemsSchema],
     restaurant_address: { type: String, required: true },
-    cuisines_available: { type: Array, required: true },
-    restaurant_image_url: { type: String, required: true },
+    cuisines_available: { type: Array},
+    restaurant_image_url: { type: String },
     discount_offered: { type: Number, default: 50 },
     delivery_time: { type: Number, default:30},
     orders: [ordersSchema],
 });
 
-// const restaurantownerSchema = new mongoose.Schema({
-//     owner_name: { type: String, required: true },
-//     owner_email: { type: String, required: true },
-//     owner_password: { type: String, required: true},
-//     restaurants_owned: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Restaurant' }]
-// });
 
 const userSchema = new mongoose.Schema({
     googleId: { type: String },
@@ -62,7 +56,6 @@ const userSchema = new mongoose.Schema({
 
 
 const UserModel = mongoose.model("User", userSchema);
-//const RestaurantOwnerModel = mongoose.model("RestaurantOwner", restaurantownerSchema);
 const RestaurantModel = mongoose.model("Restaurant", restaurantSchema);
 const RestaurantItemModel = mongoose.model('RestaurantItem', restaurantitemsSchema);
 const OrdersModel = mongoose.model('Orders', ordersSchema);

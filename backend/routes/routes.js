@@ -3,15 +3,13 @@ import 'dotenv/config';
 import passport from 'passport'
 import { redisClient } from '../server.js';
 import { registerUser, loginUser, logoutUser,getUserDetailsById,updateUserDetails } from '../controllers/UserController.js'
-// import { registerOwner,loginOwner,logoutOwner } from '../controllers/RestaurantOwnerController.js'
-import { getallrestaurants, getrestaurantbyid,create_new_restaurant } from '../controllers/RestaurantsList.js'
+import { getallrestaurants, getrestaurantbyid } from '../controllers/RestaurantsList.js'
+import { create_new_restaurant,get_restaurant_by_id } from '../controllers/RestaurantOwnerController.js';
 import { createorder,getOrders } from '../controllers/OrderController.js';
-// import{ seedingFunction } from '../controllers/seeding.js'
 
 const UserRouter = express.Router()
 const RestaurantOwnerRouter = express.Router()
 const RestaurantsRouter = express.Router()
-const SeedingRouter = express.Router()
 const OrdersRouter = express.Router()
 
 
@@ -31,17 +29,15 @@ UserRouter.get('/auth/google/callback',
   }
 );
 
+RestaurantOwnerRouter.post('/create_new_restaurant',create_new_restaurant)
+RestaurantOwnerRouter.get('/get_restaurant_by_id',get_restaurant_by_id)
 
-// RestaurantOwnerRouter.post('/register',registerOwner)
-// RestaurantOwnerRouter.post('/login', loginOwner);
-// RestaurantOwnerRouter.get('/logout', logoutOwner);
 
 RestaurantsRouter.get('/', getallrestaurants)
 RestaurantsRouter.get('/:id', getrestaurantbyid)
-RestaurantsRouter.post('create_new_restaurant',create_new_restaurant)
 
 OrdersRouter.post('/create_order',createorder)
 OrdersRouter.post('/get_orders',getOrders)
 
 
-export { UserRouter, RestaurantOwnerRouter, RestaurantsRouter, SeedingRouter,OrdersRouter }
+export { UserRouter, RestaurantOwnerRouter, RestaurantsRouter, OrdersRouter }
