@@ -69,7 +69,6 @@ export default function OrderCheckout() {
       <div className="font-medium text-2xl underline">
         Order Checkout Details
       </div>
-      <div className="font-medium text-2xl mt-8">Order Checkout Details</div>
       {cart_items && user ? (
         <>
           <div className="mb-6 mt-8">
