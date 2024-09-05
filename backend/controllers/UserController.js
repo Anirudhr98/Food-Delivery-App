@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import passport from 'passport';
 import models from '../models/models.js';
 const {UserModel}  = models
