@@ -1,4 +1,5 @@
-import { hash } from 'bcrypt';
+import pkg from 'bcryptjs';
+const { hash } = pkg;
 import mongoose from 'mongoose';
 import models from '../models/models.js';
 const { UserModel, RestaurantModel } = models;
