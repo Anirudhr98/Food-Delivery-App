@@ -24,7 +24,6 @@ UserRouter.get('/auth/google/callback',
   (req, res) => {
     const userId = req.user._id;
     redisClient.set(`user:${userId}`, JSON.stringify(req.user));
-    console.log("fsdfsdfds ",`${process.env.FRONTEND_BASE_URL}`)
     res.redirect(`${process.env.FRONTEND_BASE_URL}?token=${userId}`);
   }
 );
