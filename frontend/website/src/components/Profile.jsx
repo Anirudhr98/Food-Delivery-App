@@ -1,21 +1,30 @@
-import { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import api from '../api/axios';
-import { toast } from 'react-toastify';
-import { login } from '@/redux/userSlice';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import {  useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import api from "../api/axios";
+import { toast } from "react-toastify";
+import { login } from "@/redux/userSlice";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 export default function Profile() {
   const dispatch = useDispatch();
   const userDetails = useSelector((state) => state.user.userDetails);
   const backend_base_url = import.meta.env.VITE_BACKEND_BASE_URL;
+  const restaurant_details = useSelector((state)=>state.restaurant_management.restaurant_details)
+  
 
   const [editMode, setEditMode] = useState(false);
   const [originalValues] = useState({
-    name: userDetails.name || '',
-    address: userDetails.address || '',
+    name: userDetails.name || "",
+    address: userDetails.address || "",
     _id: userDetails._id,
+    restaurants_owned: userDetails.registered_as === "restaurant_owner" 
+      ? restaurant_details.map((restaurant) => restaurant.restaurant_name).join(", ") || ""
+      : "",
   });
+
+  
+  
+
   const [formValues, setFormValues] = useState(originalValues);
 
   const handleInputChange = (e) => {
@@ -28,12 +37,17 @@ export default function Profile() {
 
   const handleSubmit = async () => {
     try {
-      const response = await api.put(`${backend_base_url}/user/updateUserDetails`, formValues);
-      dispatch(login(response.data.updatedUserDetails ));
-      toast.success('Updated Details successfully!', { autoClose: 1500 });
+      const response = await api.put(
+        `${backend_base_url}/user/updateUserDetails`,
+        formValues
+      );
+      dispatch(login(response.data.updatedUserDetails));
+      toast.success("Updated Details successfully!", { autoClose: 1500 });
       setEditMode(false);
     } catch (error) {
-      toast.error('Failed to update details. Please try again.', { autoClose: 1500 });
+      toast.error("Failed to update details. Please try again.", {
+        autoClose: 1500,
+      });
     }
   };
 
@@ -41,7 +55,6 @@ export default function Profile() {
     setFormValues(originalValues);
     setEditMode(false);
   };
-
 
   return (
     <Card className="w-3/6 mx-auto mt-10">
@@ -59,12 +72,12 @@ export default function Profile() {
                 value={formValues.name}
                 onChange={handleInputChange}
                 className="block p-2 border border-gray-300 rounded bg-gray-50 flex-grow"
-                style={{ flexBasis: '90%' }}
+                style={{ flexBasis: "90%" }}
               />
             ) : (
               <span
                 className="block p-2 border border-gray-300 rounded bg-gray-50 flex-grow"
-                style={{ flexBasis: '90%' }}
+                style={{ flexBasis: "90%" }}
               >
                 {userDetails.name}
               </span>
@@ -76,7 +89,7 @@ export default function Profile() {
           <div className="flex items-center">
             <span
               className="block p-2 border border-gray-300 rounded bg-gray-50 flex-grow"
-              style={{ flexBasis: '90%' }}
+              style={{ flexBasis: "90%" }}
             >
               {userDetails.email}
             </span>
@@ -91,11 +104,27 @@ export default function Profile() {
               value={formValues.address}
               onChange={handleInputChange}
               className="w-full p-2 border border-gray-300 rounded flex-grow"
-              style={{ flexBasis: '90%' }}
+              style={{ flexBasis: "90%" }}
               disabled={!editMode}
             />
           </div>
         </div>
+        {userDetails.registered_as === "restaurant_owner" && (
+          <div className="mb-4">
+            <strong className="block mb-2">Restaurants Owned:</strong>
+            <div className="flex items-start">
+              <textarea
+                rows={1}
+                name="restaurants_owned"
+                value={formValues.restaurants_owned}
+                onChange={handleInputChange}
+                className="w-full p-2 border border-gray-300 rounded flex-grow"
+                style={{ flexBasis: "90%" }}
+                disabled
+              />
+            </div>
+          </div>
+        )}
         <div className="flex justify-end">
           {editMode ? (
             <>

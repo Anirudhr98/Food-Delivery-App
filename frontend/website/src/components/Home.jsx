@@ -33,7 +33,6 @@ export default function Home() {
                 const filtered_restaurants = fetched_restaurants.filter(rest =>
                     requiredFields.every(field => rest[field])
                 );
-                console.log("sfdssf",filtered_restaurants)
                 setRestaurants(filtered_restaurants);
             } catch (error) {
                 const errorMessage = error.response?.data?.message || 'Error fetching data';

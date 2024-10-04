@@ -177,7 +177,7 @@ const Navbar = () => {
                         <>
                           {restaurantData && restaurantData.map((item, index) => (
                             <MenuItem key={index}>
-                              <Link to={`/management_area`} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                              <Link to={`/restaurant_management_area`} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                                Management Area
                               </Link>
                             </MenuItem>

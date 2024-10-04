@@ -1,18 +1,18 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Signup from './components/Signup';
-import Login from './components/Login';
-import Home from './components/Home';
-import Profile from './components/Profile';
-import OrderCheckout from './components/OrderCheckout';
-import Restaurant from './components/Restaurant';
-import Orders from './components/Orders';
-import Footer from './components/Footer';
-import ScrollToTop from './components/ScrollToTop';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import RegisterRestaurant from './components/RegisterRestaurant';
-import ManagementArea from './components/ManagementArea';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Signup from "./components/Signup";
+import Login from "./components/Login";
+import Home from "./components/Home";
+import Profile from "./components/Profile";
+import OrderCheckout from "./components/OrderCheckout";
+import Restaurant from "./components/Restaurant";
+import Orders from "./components/Orders";
+import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import RegisterRestaurant from "./components/RegisterRestaurant";
+import RestaurantOwnerArea from "./components/RestaurantOwnerArea";
 
 function App() {
   return (
@@ -27,10 +27,14 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/order_checkout" element={<OrderCheckout />} />
             <Route path="/orders" element={<Orders />} />
-            <Route path='/profile' element={<Profile />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="/restaurant/:id" element={<Restaurant />} />
             <Route path="/register_restaurant" element={<RegisterRestaurant />} />
-            <Route path="/management_area" element={<ManagementArea />} />
+            <Route path="/restaurant_management_area" element={<RestaurantOwnerArea />}>
+              <Route path="profile" element={<Profile />} />
+              <Route path="" element={<Profile />} /> 
+
+            </Route>
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </main>

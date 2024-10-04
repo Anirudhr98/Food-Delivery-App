@@ -1,0 +1,4 @@
+user  details can be seen on localstorage
+redis shuts off after sometime due to inactivity
+display some loader till data fetches on home screen
+filter for home screen restuarants and pagination
