@@ -34,7 +34,7 @@ export default function RestaurantOwnerArea() {
                 restaurant_details.map((restaurant) => (
                   <Link
                     key={restaurant._id}
-                    to={`/restaurants/${restaurant._id}`}
+                    to={`/restaurant_management_area/${restaurant._id}`}
                     className="mt-2 text-muted-foreground px-6 transition-all hover:text-primary"
                   >
                     <span className="mr-2 text-2xl leading-none transition-colors duration-200 ease-in-out hover:text-primary">
@@ -87,7 +87,7 @@ export default function RestaurantOwnerArea() {
                   restaurant_details.map((restaurant) => (
                     <Link
                       key={restaurant._id}
-                      to={`/restaurants/${restaurant._id}`}
+                      to={`/restaurant_management_area/${restaurant._id}`}
                       className="mt-2 text-muted-foreground px-6 transition-all hover:text-primary"
                     >
                       <span className="mr-2 text-2xl leading-none transition-colors duration-200 ease-in-out hover:text-primary">

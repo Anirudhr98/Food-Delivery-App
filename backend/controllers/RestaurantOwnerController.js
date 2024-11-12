@@ -20,7 +20,7 @@ export const create_new_restaurant = async (req, res) => {
     // Start a session for transaction
     const session = await mongoose.startSession();
     session.startTransaction();
-
+33
     try {
         // Check if the user already exists
         const existingUser = await UserModel.findOne({ email });
