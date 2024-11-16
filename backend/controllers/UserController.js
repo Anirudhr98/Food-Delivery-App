@@ -30,6 +30,7 @@ export const registerUser = async (req, res) => {
 };
 
 export const loginUser = (req, res, next) => {
+  console.log("req is ",req)
   passport.authenticate('local', (err, user, info) => {
     if (err) return next(err);
     if (!user) return res.status(400).json({ message: info.message });

@@ -16,7 +16,7 @@ A full stack application for managing food orders and restaurant operations.
 - **Frontend:** React, Vite, Tailwind CSS, Shadcn UI
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB
-- **Cache:** Redis
+- **Cache For Sessions:** Mongodb
 - **Authentication:** Passport.js
 - **State Management:** Redux Toolkit
 - **Deployment:** Netlify (Frontend), Render (Backend)
