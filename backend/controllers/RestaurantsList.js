@@ -2,12 +2,49 @@
 import models from '../models/models.js';
 const  {RestaurantModel} = models;
 
+// export const getallrestaurants = async (req, res) => {
+//   try {
+//     const restaurants_list = await RestaurantModel.find();
+//     res.json({ message: 'Restaurants found', restaurants_list });
+//   } catch (error) {
+//     res.json({ message: 'Error fetching restaurants', error: error.message });
+//   }
+// };
+
 export const getallrestaurants = async (req, res) => {
   try {
-    const restaurants_list = await RestaurantModel.find();
-    res.json({ message: 'Restaurants found', restaurants_list });
+    const { page = 1, limit = 10 } = req.query; // Defaults: page 1, limit 10
+
+    const pageNumber = parseInt(page);
+    const limitNumber = parseInt(limit);
+
+    if (isNaN(pageNumber) || isNaN(limitNumber)) {
+      return res.status(400).json({
+        message: 'Invalid page or limit query parameters.',
+      });
+    }
+
+    // Skip documents and limit results for pagination
+    const restaurants_list = await RestaurantModel.find()
+      .skip((pageNumber - 1) * limitNumber)
+      .limit(limitNumber);
+
+    // Total count for calculating the total number of pages
+    const totalRestaurants = await RestaurantModel.countDocuments();
+    const totalPages = Math.ceil(totalRestaurants / limitNumber);
+
+    res.json({
+      message: 'Restaurants found',
+      restaurants_list,
+      currentPage: pageNumber,
+      totalPages,
+      totalRestaurants,
+    });
   } catch (error) {
-    res.json({ message: 'Error fetching restaurants', error: error.message });
+    res.status(500).json({
+      message: 'Error fetching restaurants',
+      error: error.message,
+    });
   }
 };
 
