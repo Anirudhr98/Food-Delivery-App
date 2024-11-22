@@ -12,10 +12,12 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
+import MenuManagamentArea from "./MenuManagamentArea";
+import OrderManagementArea from "./OrderManagementArea";
 // import { updateRestaurantDetails } from "@/store/restaurantSlice"; // Adjust the import based on your slice
 
 export default function RestaurantManagementArea() {
-//   const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const restaurant_details = useSelector(state => state.restaurant_management.restaurant_details);
 
   // Local state for managing input fields
@@ -87,6 +89,12 @@ export default function RestaurantManagementArea() {
             </CardFooter>
           </Card>
         </TabsContent>
+        <TabsContent value="menu_section">
+          <MenuManagamentArea/>
+        </TabsContent>
+        <TabsContent value="order_section">
+          <OrderManagementArea />
+          </TabsContent>
       </Tabs>
     </div>
   );

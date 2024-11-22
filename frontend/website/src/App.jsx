@@ -14,6 +14,8 @@ import "react-toastify/dist/ReactToastify.css";
 import RegisterRestaurant from "./components/RegisterRestaurant";
 import RestaurantOwnerArea from "./components/RestaurantOwnerArea";
 import RestaurantManagementArea from "./components/RestaurantManagementArea";
+import MenuManagamentArea from "./components/MenuManagamentArea";
+import OrderManagementArea from "./components/OrderManagementArea";
 
 function App() {
   return (
@@ -33,7 +35,10 @@ function App() {
             <Route path="/register_restaurant" element={<RegisterRestaurant />} />
             <Route path="/restaurant_management_area" element={<RestaurantOwnerArea />}>
               <Route path="profile" element={<Profile />} />
-              <Route path=":id" element={<RestaurantManagementArea/>}/> 
+              <Route path=":id/details" element={<RestaurantManagementArea/>}/> 
+              <Route path=":id/menu_management" element={<RestaurantManagementArea/>}/> 
+              <Route path=":id/order_section" element={<RestaurantManagementArea/>}/> 
+
             </Route>
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
