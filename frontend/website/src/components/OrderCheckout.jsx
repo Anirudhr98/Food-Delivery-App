@@ -32,7 +32,7 @@ export default function OrderCheckout() {
   }, [cart_items, navigate]);
 
   const handleSave = () => {
-    toast.success(`Address updated to: ${newAddress}`);
+    toast.success(`Address updated to: ${newAddress}`, { autoClose: 1500 });
     dispatch(setAddress(newAddress));
     setIsEditing(false);
   };
