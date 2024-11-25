@@ -2,7 +2,7 @@ import express from 'express';
 import 'dotenv/config';
 import passport from 'passport';
 import { registerUser, loginUser, logoutUser, getUserDetailsById, updateUserDetails } from '../controllers/UserController.js';
-import { getallrestaurants, getrestaurantbyid } from '../controllers/RestaurantsList.js';
+import { getallrestaurants, getrestaurantbyid,update_restaurant_by_id } from '../controllers/RestaurantsList.js';
 import { create_new_restaurant, get_restaurant_by_id } from '../controllers/RestaurantOwnerController.js';
 import { createorder, getOrders } from '../controllers/OrderController.js';
 
@@ -37,6 +37,8 @@ RestaurantOwnerRouter.get('/get_restaurant_by_id', get_restaurant_by_id);
 // Restaurant routes
 RestaurantsRouter.get('/', getallrestaurants);
 RestaurantsRouter.get('/:id', getrestaurantbyid);
+RestaurantsRouter.put("/:restaurant_id", update_restaurant_by_id)
+
 
 // Order routes
 OrdersRouter.post('/create_order', createorder);

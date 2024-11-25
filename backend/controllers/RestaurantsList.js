@@ -93,3 +93,31 @@ export const create_new_restaurant = async (req, res) => {
     return res.status(500).json({ message: 'Error creating restaurant', error: error.message });
   }
 };
+
+
+export const update_restaurant_by_id = async (req, res) => {
+  try {
+    const { restaurant_id } = req.params;
+    const updatedDetails = req.body;
+
+    // Validate the restaurant ID
+    if (!mongoose.Types.ObjectId.isValid(restaurant_id)) {
+      return res.status(400).json({ message: "Invalid restaurant ID." });
+    }
+
+    // Update the restaurant
+    const updatedRestaurant = await Restaurant.findByIdAndUpdate(
+      restaurant_id,
+      { $set: updatedDetails },
+      { new: true, runValidators: true }
+    );
+
+    if (!updatedRestaurant) {
+      return res.status(404).json({ message: "Restaurant not found." });
+    }
+
+    return res.status(200).json({ message: "Restaurant updated successfully!", data: updatedRestaurant });
+  } catch (error) {
+    return res.status(500).json({ message: "Error updating restaurant", error: error.message });
+  }
+};
