@@ -55,7 +55,7 @@ export default function Home() {
         );
         dispatch(login(response.data.user_details));
         navigate("/", { replace: true });
-        toast.success("Successfully logged in!");
+        toast.success("Successfully logged in!", { autoClose: 1500 });
       } catch (error) {
         const errorMessage =
           error.response?.data?.message || "Error logging you in";

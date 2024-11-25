@@ -36,7 +36,7 @@ export default function Login() {
       setLoginForm({email:'',password:''})
       dispatch(login(response.data.user))
       navigate('/',{replace:true})
-      toast.success("Successfully logged in!")
+      toast.success("Successfully logged in!", { autoClose: 1500 })
     }catch(error){
       const error_message = error.response?.data?.message || 'Error logging you in'
       toast.error(`${error_message}`,{autoClose:1500})

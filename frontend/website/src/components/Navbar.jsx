@@ -73,7 +73,7 @@ const Navbar = () => {
       navigate('/order_checkout');
     } else {
       navigate('/login');
-      toast.info('You need to be logged in to make orders');
+      toast.info('You need to be logged in to make orders', { autoClose: 1500 });
     }
   };
 

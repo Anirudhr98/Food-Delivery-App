@@ -35,7 +35,6 @@ const handleSubmit = async (e) => {
   } catch (error) {
     const errorMessage = error.response?.data?.message || 'Error registering user';
     toast.error(`${errorMessage}`, { autoClose: 1500 });
-
   }
 }
 
