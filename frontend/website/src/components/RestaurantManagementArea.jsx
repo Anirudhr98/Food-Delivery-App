@@ -17,26 +17,26 @@ import Orders from "./Orders";
 // import { updateRestaurantDetails } from "@/store/restaurantSlice"; // Adjust the import based on your slice
 
 export default function RestaurantManagementArea() {
-//   const dispatch = useDispatch();
-  const restaurant_details = useSelector(state => state.restaurant_management.restaurant_details);
+  //   const dispatch = useDispatch();
+  const restaurant_details = useSelector((state) => state.restaurant_management.restaurant_details[0]);
 
   // Local state for managing input fields
   const [formData, setFormData] = useState({
-    restaurantName: restaurant_details.restaurant_name,
-    restaurantImage: restaurant_details.restaurant_image_url,
-    restaurantAddress: restaurant_details.restaurant_address,
-    discountOffered: restaurant_details.discount_offered,
-    deliveryTime: restaurant_details.delivery_time,
+    restaurant_name: restaurant_details.restaurant_name,
+    restaurant_image_url: restaurant_details.restaurant_image_url,
+    restaurant_address: restaurant_details.restaurant_address,
+    discount_offered: restaurant_details.discount_offered,
+    delivery_time: restaurant_details.delivery_time,
   });
 
   // Sync local state with the Redux store
   useEffect(() => {
     setFormData({
-      restaurantName: restaurant_details.restaurant_name,
-      restaurantImage: restaurant_details.restaurant_image_url,
-      restaurantAddress: restaurant_details.restaurant_address,
-      discountOffered: restaurant_details.discount_offered,
-      deliveryTime: restaurant_details.delivery_time,
+      restaurant_name: restaurant_details.restaurant_name,
+      restaurant_image_url: restaurant_details.restaurant_image_url,
+      restaurant_address: restaurant_details.restaurant_address,
+      discount_offered: restaurant_details.discount_offered,
+      delivery_time: restaurant_details.delivery_time,
     });
   }, [restaurant_details]);
 
@@ -49,6 +49,8 @@ export default function RestaurantManagementArea() {
     // dispatch(updateRestaurantDetails(formData)); // Adjust according to your action
   };
 
+  console.log(restaurant_details); // Log to check the data
+  
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-8">
       <Tabs defaultValue="restaurant_management_area" className="w-full">
@@ -66,12 +68,23 @@ export default function RestaurantManagementArea() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-2">
-              {[
-                { label: "Restaurant Name", name: "restaurantName", value: formData.restaurantName },
-                { label: "Restaurant Image URL", name: "restaurantImage", value: formData.restaurantImage },
-                { label: "Restaurant Address", name: "restaurantAddress", value: formData.restaurantAddress },
-                { label: "Discount Offered", name: "discountOffered", value: formData.discountOffered },
-                { label: "Delivery Time", name: "deliveryTime", value: formData.deliveryTime },
+              {/* Display image if restaurant_image_url exists */}
+              {formData.restaurant_image_url && (
+                <div className="mb-4">
+                  <img
+                    src={formData.restaurant_image_url}
+                    alt="Restaurant"
+                    className="w-50 h-50 object-cover rounded-md"
+                  />
+                </div>
+              )}
+
+              {[ 
+                { label: "Restaurant Name", name: "restaurant_name", value: formData.restaurant_name },
+                { label: "Restaurant Image URL", name: "restaurant_image_url", value: formData.restaurant_image_url },
+                { label: "Restaurant Address", name: "restaurant_address", value: formData.restaurant_address },
+                { label: "Discount Offered", name: "discount_offered", value: formData.discount_offered },
+                { label: "Delivery Time", name: "delivery_time", value: formData.delivery_time },
               ].map((field, index) => (
                 <div key={index} className="space-y-1">
                   <Label htmlFor={field.name}>{field.label}</Label>
@@ -90,10 +103,10 @@ export default function RestaurantManagementArea() {
           </Card>
         </TabsContent>
         <TabsContent value="menu_section">
-              <MenuManagementArea />
+          <MenuManagementArea />
         </TabsContent>
         <TabsContent value="order_section">
-              <Orders />
+          <Orders />
         </TabsContent>
       </Tabs>
     </div>
