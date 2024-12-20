@@ -1,4 +1,4 @@
-import {  useState } from "react";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import api from "../api/axios";
 import { toast } from "react-toastify";
@@ -9,24 +9,27 @@ export default function Profile() {
   const dispatch = useDispatch();
   const userDetails = useSelector((state) => state.user.userDetails);
   const backend_base_url = import.meta.env.VITE_BACKEND_BASE_URL;
-  const restaurant_details = useSelector((state)=>state.restaurant_management.restaurant_details)
   
+  // Ensure restaurant_details is always an array
+  const restaurant_details = useSelector(
+    (state) => state.restaurant_management.restaurant_details || []
+  );
 
-  const [editMode, setEditMode] = useState(false);
+  // Initial values for the form
   const [originalValues] = useState({
     name: userDetails.name || "",
     address: userDetails.address || "",
     _id: userDetails._id,
-    restaurants_owned: userDetails.registered_as === "restaurant_owner" 
-      ? restaurant_details.map((restaurant) => restaurant.restaurant_name).join(", ") || ""
-      : "",
+    restaurants_owned:
+      userDetails.registered_as === "restaurant_owner"
+        ? restaurant_details.map((restaurant) => restaurant.restaurant_name).join(", ")
+        : "",
   });
 
-  
-  
-
   const [formValues, setFormValues] = useState(originalValues);
+  const [editMode, setEditMode] = useState(false);
 
+  // Handle input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormValues((prevValues) => ({
@@ -35,6 +38,7 @@ export default function Profile() {
     }));
   };
 
+  // Submit updated user details
   const handleSubmit = async () => {
     try {
       const response = await api.put(
@@ -51,6 +55,7 @@ export default function Profile() {
     }
   };
 
+  // Cancel edit mode and revert changes
   const handleCancel = () => {
     setFormValues(originalValues);
     setEditMode(false);
@@ -62,6 +67,7 @@ export default function Profile() {
         <CardTitle className="text-2xl">Profile Details</CardTitle>
       </CardHeader>
       <CardContent>
+        {/* Name Section */}
         <div className="mb-4">
           <strong className="block mb-2">Name:</strong>
           <div className="flex items-center">
@@ -84,6 +90,8 @@ export default function Profile() {
             )}
           </div>
         </div>
+
+        {/* Email Section */}
         <div className="mb-4">
           <strong className="block mb-2">Email:</strong>
           <div className="flex items-center">
@@ -95,6 +103,8 @@ export default function Profile() {
             </span>
           </div>
         </div>
+
+        {/* Address Section */}
         <div className="mb-4">
           <strong className="block mb-2">Address:</strong>
           <div className="flex items-start">
@@ -109,7 +119,9 @@ export default function Profile() {
             />
           </div>
         </div>
-        {userDetails.registered_as === "restaurant_owner" && (
+
+        {/* Restaurants Owned Section */}
+        {userDetails.registered_as === "restaurant_owner" && restaurant_details.length > 0 && (
           <div className="mb-4">
             <strong className="block mb-2">Restaurants Owned:</strong>
             <div className="flex items-start">
@@ -125,6 +137,8 @@ export default function Profile() {
             </div>
           </div>
         )}
+
+        {/* Action Buttons */}
         <div className="flex justify-end">
           {editMode ? (
             <>

@@ -12,9 +12,12 @@ const restaurantManagementSlice = createSlice({
     },
     addNewMenuItem:(state,action) =>{
       state.restaurant_details[0].restaurant_items.push(action.payload)
-    }
+    },
+    updateRestaurantDetails: (state, action) => {
+      state.restaurant_details = action.payload;
+    },
   }
 });
 
-export const { setRestaurantDetails,addNewMenuItem } = restaurantManagementSlice.actions;
+export const { setRestaurantDetails,addNewMenuItem,updateRestaurantDetails } = restaurantManagementSlice.actions;
 export default restaurantManagementSlice.reducer;

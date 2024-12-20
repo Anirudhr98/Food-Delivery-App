@@ -98,7 +98,7 @@ export default function Home() {
             color="#cc3147"
             variant="bounce"
             size="large"
-            text="Restaurants are being fetched. Might Take A Minute. Hang On..!!"
+            text="Hang On for a minute..!!"
             textColor="#f82525"
           />
         </div>

@@ -99,3 +99,27 @@ export const get_restaurant_by_id = async (req, res) => {
     }
   };
   
+  export const update_restaurant_details = async (req, res) => {
+    const restaurant_id = req.params.id;
+    const { restaurant_name, restaurant_image_url, restaurant_address, discount_offered, delivery_time } = req.body;
+
+    try {
+        const restaurant = await RestaurantModel.findById(restaurant_id);
+
+        if (!restaurant) {
+            return res.status(404).json({ message: 'Restaurant not found' });
+        }
+
+        restaurant.restaurant_name = restaurant_name || restaurant.restaurant_name;
+        restaurant.restaurant_image_url = restaurant_image_url || restaurant.restaurant_image_url;
+        restaurant.restaurant_address = restaurant_address || restaurant.restaurant_address;
+        restaurant.discount_offered = discount_offered || restaurant.discount_offered;
+        restaurant.delivery_time = delivery_time || restaurant.delivery_time;
+
+        const updatedRestaurant = await restaurant.save();
+
+        res.status(200).json(updatedRestaurant);
+    } catch (error) {
+        res.status(500).json({ message: 'Server error', error: error.message });
+    }
+}

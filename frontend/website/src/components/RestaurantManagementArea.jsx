@@ -14,12 +14,16 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import MenuManagementArea from "./MenuManagementArea";
 import Orders from "./Orders";
-// import { updateRestaurantDetails } from "@/store/restaurantSlice"; // Adjust the import based on your slice
+import { updateRestaurantDetails } from "../redux/restaurantManagementSlice" // Adjust the import based on your slice
+import api from '../api/axios'
+import { toast } from "react-toastify";
 
 export default function RestaurantManagementArea() {
-  //   const dispatch = useDispatch();
-  const restaurant_details = useSelector((state) => state.restaurant_management.restaurant_details[0]);
-
+  const backend_base_url = import.meta.env.VITE_BACKEND_BASE_URL 
+  const restaurant_details = useSelector((state) => state.restaurant_management.restaurant_details?.[0]||{});
+  const dispatch = useDispatch();
+  const restaurant_id = restaurant_details._id;
+  
   // Local state for managing input fields
   const [formData, setFormData] = useState({
     restaurant_name: restaurant_details.restaurant_name,
@@ -45,11 +49,19 @@ export default function RestaurantManagementArea() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSaveChanges = () => {
-    // dispatch(updateRestaurantDetails(formData)); // Adjust according to your action
+  const handleSaveChanges = async() => {
+    try{
+      const response = await api.put(
+        `${backend_base_url}/restaurant_owner/update_restaurant_details/${restaurant_id}`,
+        formData
+      );
+      dispatch(updateRestaurantDetails(response.data)); 
+      toast.success("Restaurant details updated successfully!", { autoClose: 1500 });
+    }catch(error){
+       const error_message = 'Error updating restaurant details'
+      toast.error(`${error_message}`,{autoClose:1500})
+    }
   };
-
-  console.log(restaurant_details); // Log to check the data
   
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-8">
@@ -83,8 +95,8 @@ export default function RestaurantManagementArea() {
                 { label: "Restaurant Name", name: "restaurant_name", value: formData.restaurant_name },
                 { label: "Restaurant Image URL", name: "restaurant_image_url", value: formData.restaurant_image_url },
                 { label: "Restaurant Address", name: "restaurant_address", value: formData.restaurant_address },
-                { label: "Discount Offered", name: "discount_offered", value: formData.discount_offered },
-                { label: "Delivery Time", name: "delivery_time", value: formData.delivery_time },
+                { label: "Discount Offered (in Rs.)", name: "discount_offered", value: formData.discount_offered },
+                { label: "Delivery Time (in mins.)", name: "delivery_time", value: formData.delivery_time },
               ].map((field, index) => (
                 <div key={index} className="space-y-1">
                   <Label htmlFor={field.name}>{field.label}</Label>

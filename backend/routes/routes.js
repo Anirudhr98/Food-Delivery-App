@@ -3,7 +3,7 @@ import 'dotenv/config';
 import passport from 'passport';
 import { registerUser, loginUser, logoutUser, getUserDetailsById, updateUserDetails } from '../controllers/UserController.js';
 import { getallrestaurants, getrestaurantbyid } from '../controllers/RestaurantsList.js';
-import { create_new_restaurant, get_restaurant_by_id } from '../controllers/RestaurantOwnerController.js';
+import { create_new_restaurant, get_restaurant_by_id ,update_restaurant_details} from '../controllers/RestaurantOwnerController.js';
 import { createorder, getOrders } from '../controllers/OrderController.js';
 
 const UserRouter = express.Router();
@@ -33,6 +33,7 @@ UserRouter.get('/auth/google/callback',
 // Restaurant Owner routes
 RestaurantOwnerRouter.post('/create_new_restaurant', create_new_restaurant);
 RestaurantOwnerRouter.get('/get_restaurant_by_id', get_restaurant_by_id);
+RestaurantOwnerRouter.put('/update_restaurant_details/:id', update_restaurant_details);
 
 // Restaurant routes
 RestaurantsRouter.get('/', getallrestaurants);
