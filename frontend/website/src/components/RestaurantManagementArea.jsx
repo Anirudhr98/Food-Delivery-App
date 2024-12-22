@@ -65,7 +65,7 @@ export default function RestaurantManagementArea() {
   
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-8">
-      <Tabs defaultValue="restaurant_management_area" className="w-full">
+      <Tabs defaultValue="restaurant_details" className="w-full">
         <TabsList className="grid grid-cols-3">
           <TabsTrigger value="restaurant_details">Restaurant Details</TabsTrigger>
           <TabsTrigger value="menu_section">Menu Section</TabsTrigger>

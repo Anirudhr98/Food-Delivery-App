@@ -83,7 +83,7 @@ export default function MenuManagementArea() {
         dispatch(updateRestaurantDetails(response.data.updatedRestaurant));
         toast.success("Item updated successfully!", { autoClose: 1500 });
         setIsEditDialogOpen(false); // Close the dialog after saving changes
-        window.location.reload(); // Reload the page to reflect changes
+        window.location.reload(true); // Reload the page to reflect changes
       } else {
         throw new Error("Failed to update menu item");
       }
