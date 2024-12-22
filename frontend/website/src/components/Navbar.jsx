@@ -95,7 +95,7 @@ const Navbar = () => {
               <PopoverTrigger>
                 <FaShoppingCart className="text-gray-700 hover:text-gray-900 text-2xl relative" />
                 {cart.items.length > 0 && (
-                  <span className="absolute top-8 right-[80px] md:right-[80px] lg:right-[80px] xl:right-[120px] bg-orange-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">
+                  <span className="absolute top-8 right-[80px] md:right-[80px] lg:right-[80px] bg-orange-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">
                     {cart.items.length}
                   </span>
                 )}
