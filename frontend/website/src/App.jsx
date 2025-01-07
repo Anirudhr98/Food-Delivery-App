@@ -14,6 +14,7 @@ import "react-toastify/dist/ReactToastify.css";
 import RegisterRestaurant from "./components/RegisterRestaurant";
 import RestaurantOwnerArea from "./components/RestaurantOwnerArea";
 import RestaurantManagementArea from "./components/RestaurantManagementArea";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -31,10 +32,15 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/restaurant/:id" element={<Restaurant />} />
             <Route path="/register_restaurant" element={<RegisterRestaurant />} />
-            <Route path="/restaurant_management_area" element={<RestaurantOwnerArea />}>
-              <Route path="profile" element={<Profile />} />
-              <Route path=":id" element={<RestaurantManagementArea/>}/> 
+            
+            {/* Protected routes for restaurant owners */}
+            <Route element={<PrivateRoute allowedRoles={["restaurant_owner"]} />}>
+              <Route path="/restaurant_management_area" element={<RestaurantOwnerArea />}>
+                <Route path="profile" element={<Profile />} />
+                <Route path=":id" element={<RestaurantManagementArea />} />
+              </Route>
             </Route>
+
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </main>
