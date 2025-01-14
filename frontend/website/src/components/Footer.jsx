@@ -12,10 +12,10 @@ const Footer = () => {
     {
       title: "Company",
       items: [
-        { title: "About Us", to: '/about-us' },
-        { title: "Fundraising", to: '/fundraising' },
-        { title: "Investors", to: '/investors' },
-        { title: "Contact Us", to: '/contact-us' },
+        { title: "About Us"  },
+        { title: "Fundraising"  },
+        { title: "Investors" },
+        { title: "Contact Us"  },
       ],
     },
   ];
